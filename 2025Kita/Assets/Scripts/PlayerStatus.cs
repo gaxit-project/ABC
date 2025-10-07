@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+    public int HP = 100;                         //　プレイヤーのHP
     [SerializeField]
     private Transform rayPosition;          //　レイを飛ばす場所
     [SerializeField]
     private float rayRange = 0.85f;         //　レイを飛ばす距離
     private float fallenPosition;           //　落ちた場所
-    private int HP = 100;                         //　プレイヤーのHP
     private bool isFall;                    //　落ちているかどうか
     private float fallenDistance;           //　落下距離
     [SerializeField]
