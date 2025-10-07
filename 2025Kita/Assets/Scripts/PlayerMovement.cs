@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
-    public float _moveForce = 5f;   // 移動するための力の強さ
+    public float moveForce = 5f;   // 移動するための力の強さ
     public float jampPower = 200f;          // ジャンプ力
     float moveHorizontal;           // 水平方向
     float moveVertical;             // 垂直方向
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical) * _moveForce; // 移動させるための力の大きさ
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical) * moveForce; // 移動させるための力の大きさ
         rb.AddForce(movement);  // 移動
 
         if(Input.GetKeyDown(KeyCode.Space))
