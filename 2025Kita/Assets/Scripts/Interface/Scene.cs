@@ -14,4 +14,9 @@ public class Scene : MonoBehaviour
     {
         SceneManager.LoadScene("Title");
     }
+
+    public void ChangeClear()
+    {
+        SceneManager.LoadScene("Clear");
+    }
 }
