@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical) * moveForce; // 移動させるための力の大きさ
+        Vector3 movement = new Vector3(-moveHorizontal, 0.0f, -moveVertical) * moveForce; // 移動させるための力の大きさ
   
 
         rb.AddForce(movement);  // 移動

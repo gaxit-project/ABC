@@ -40,7 +40,7 @@ public class PlayerStatus : MonoBehaviour
                 {
                     HP -= (int)((fallenDistance - takeDamageDistance) * 100);
 
-                    Debug.LogFormat("ダメージ" + (int)((fallenDistance - takeDamageDistance) * 100) + "残りHP" + HP);
+                    Debug.LogFormat("ダメージ" + (int)((fallenDistance - takeDamageDistance) * 200) + "残りHP" + HP);
                 }
                 isFall = false;
             }

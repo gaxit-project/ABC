@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScene/Morimoto.unity
-    guid: 6a5b5ac013d91ec45a9c84e872b2b254
+    path: Assets/Scenes/Title.unity
+    guid: 5869d66b9b403b448a4e4a5e0b355d0e
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 35611fd72fe696e4289f7d14b2e0ca38
   m_configObjects: {}
