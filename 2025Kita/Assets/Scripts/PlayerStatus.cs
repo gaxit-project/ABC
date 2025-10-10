@@ -12,7 +12,6 @@ public class PlayerStatus : MonoBehaviour
     private bool isFall;                                     //　落ちているかどうか
     private float fallenDistance;                            //　落下距離
     [SerializeField] public float takeDamageDistance = 2f;   //　どのぐらいの高さからダメージを与えるか
- 
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +19,9 @@ public class PlayerStatus : MonoBehaviour
         fallenDistance = 0f;
         fallenPosition = transform.position.y;
         isFall = false;
+        
     }
-    
+
     // Update is called once per frame
     void FixedUpdate()
     {
