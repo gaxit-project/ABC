@@ -22,12 +22,13 @@ public class GameOver : MonoBehaviour
     {
         if(status.HP <= 0)
         {
-            Food_EggRenderer.enabled = false;
+            //Food_EggRenderer.enabled = false;
 
+            egg.SetActive(false);
             crackedEgg.SetActive(true);
             crackedEgg.transform.position = egg.transform.position;
             
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(Input.GetKeyDown(KeyCode.Return) || (Input.GetButtonDown("Fire1")))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
             }
