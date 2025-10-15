@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,11 +134,11 @@ PrefabInstance:
     - target: {fileID: 3131037476208070324, guid: f84be27a5e7560841b0beaf075064038, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5face6983bda359448bfffba4a4f94d6, type: 2}
+      objectReference: {fileID: 2100000, guid: 5bd38f39e5e8d2c49bbc12ef63cc7601, type: 2}
     - target: {fileID: 4463787598246459814, guid: f84be27a5e7560841b0beaf075064038, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5face6983bda359448bfffba4a4f94d6, type: 2}
+      objectReference: {fileID: 2100000, guid: 5bd38f39e5e8d2c49bbc12ef63cc7601, type: 2}
     - target: {fileID: 4933311035135212246, guid: f84be27a5e7560841b0beaf075064038, type: 3}
       propertyPath: m_Name
       value: CrackedEgg
