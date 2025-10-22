@@ -9,7 +9,7 @@ public class Pause : MonoBehaviour
 
     private PlayerInput playerInput;
 
-    private bool isPaused = false;
+    public bool isPaused = false;
 
     private void Awake()
     {

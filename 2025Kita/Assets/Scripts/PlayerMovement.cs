@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     float moveVertical;             // 垂直方向
     private bool isJumping = false; // ジャンプ中かどうか
     PlayerStatus status;
+    [SerializeField]private Pause pause;
     
     // Start is called before the first frame update
     void Start()
@@ -25,10 +26,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Backspace) || (Input.GetButtonDown("Fire1")))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
+            if (pause != null && !pause.isPaused) //ポーズ画面を開いている間は開けない
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
+            }               
         }
+        
 
         if (status.HP <= 0) // HPが0になると動かなくなる
         {

@@ -1578,6 +1578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 4
   jumpPower: 2
+  pause: {fileID: 0}
 --- !u!54 &774513899
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2785,6 +2786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 4
   jumpPower: 2
+  pause: {fileID: 1315633163}
 --- !u!54 &1315633157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2928,6 +2930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1850602062}
+  isPaused: 0
 --- !u!1 &1404128175
 GameObject:
   m_ObjectHideFlags: 0
@@ -3174,6 +3177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 50
   jumpPower: 5
+  pause: {fileID: 0}
 --- !u!54 &1488729202
 Rigidbody:
   m_ObjectHideFlags: 0
