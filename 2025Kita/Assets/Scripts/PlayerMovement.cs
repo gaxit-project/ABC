@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || (Input.GetButtonDown("Fire1")))
+        if (Input.GetKeyDown(KeyCode.Backspace) || (Input.GetButtonDown("Fire1")))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
         }

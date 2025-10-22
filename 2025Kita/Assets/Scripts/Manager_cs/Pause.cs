@@ -1,34 +1,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
-    private bool isPausing = false;
+    [SerializeField] public GameObject pauseMenu;
+
+    private PlayerInput playerInput;
+
+    private bool isPaused = false;
+
+    private void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+    }
+
+    public void OnMenu(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            PauseGame();
+        }
+        
+    }
 
     //ポーズ画面を開く
     public void PauseGame()
     {
-        if (isPausing)
+        if (!isPaused)
         {
-            Time.timeScale = 0;
+            StartPause();
         }
-        else
+        else if(isPaused)
         {
-            Debug.Log("ポーズ画面を開いている");
+            ClosePause();
         }
+    }
+
+    public void StartPause()
+    {
+        Time.timeScale = 0;
+
+        pauseMenu.SetActive(true);
+
+        isPaused = true;
     }
 
     //ポーズ画面を閉じる
     public void ClosePause()
     {
-        if(!isPausing)
-        {
-            Time.timeScale = 1;
-        }
-        else
-        {
-            Debug.Log("ポーズ画面を閉じている");
-        }
+        Time.timeScale = 1;
+
+        pauseMenu.SetActive(false);
+
+        isPaused = false;
     }
 }
