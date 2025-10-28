@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Start
+  - Goal
+  - ChangeEgg
   layers:
   - Default
   - TransparentFX
