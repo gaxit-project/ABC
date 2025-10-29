@@ -11,32 +11,33 @@ public class CameraChange : MonoBehaviour
     public GameObject mainCamera;           // 使用中カメラ
     public PlayerMovement[] targetScripts;  // プレイヤー移動を管理するスクリプト
     private PlayerMovement currentScript;   // 現在動いているプレイヤーのスクリプト
+    private int EggSelect = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         // 配列初期化
-        if(targetScripts.Length > 0 && targetScripts[0] != null)
+        if (targetScripts.Length > 0 && targetScripts[0] != null)
         {
             currentScript = targetScripts[0];
             currentScript.enabled = true;
         }
 
-        for(int i=0; i<cameras.Length; i++)
+        for (int i = 0; i < cameras.Length; i++)
         {
-            if (i!=0)   // 使用中のスクリプト以外は非アクティブにしておく
+            if (i != 0)   // 使用中のスクリプト以外は非アクティブにしておく
             {
                 if (cameras[i] != null)
                 {
                     cameras[i].SetActive(false);
                 }
 
-                if(targetScripts.Length > i && targetScripts[i] != null)
+                if (targetScripts.Length > i && targetScripts[i] != null)
                 {
                     targetScripts[i].enabled = false;
                 }
-            }        
-            
+            }
+
         }
 
         currentScript.enabled = true;               // 現在使用しているオブジェクトのスクリプトをアクティブ状態にする
@@ -48,17 +49,28 @@ public class CameraChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        Debug.Log("卵選択可能");
+
+        if (currentScript.flag == 1)
         {
-            EggChange(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            EggChange(2);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            EggChange(3);
+            if(Input.GetButtonDown("Fire3"))
+            {
+                EggSelect++;
+                EggChange(EggSelect%3);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                EggChange(0);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                EggChange(1);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                EggChange(2);
+            }
         }
     }
 
@@ -69,10 +81,12 @@ public class CameraChange : MonoBehaviour
     private void EggChange(int num)
     {
         mainCamera.SetActive(false);
-        mainCamera = cameras[num-1];
-        cameras[num-1].SetActive(true);
+        mainCamera = cameras[num];
+        cameras[num].SetActive(true);
         currentScript.enabled = false;
-        currentScript = targetScripts[num-1];
+        currentScript = targetScripts[num];
         currentScript.enabled = true;
+        currentScript.flag = 0;
+        Debug.Log("卵選択完了");
     }
 }

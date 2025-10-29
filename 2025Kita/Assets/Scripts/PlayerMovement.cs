@@ -14,8 +14,9 @@ public class PlayerMovement : MonoBehaviour
     float moveVertical;             // 垂直方向
     private bool isJumping = false; // ジャンプ中かどうか
     PlayerStatus status;
-    [SerializeField]private Pause pause;
-    
+    [SerializeField] private Pause pause;
+    public int flag = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +33,9 @@ public class PlayerMovement : MonoBehaviour
             if (pause != null && !pause.isPaused) //ポーズ画面を開いている間は開けない
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
-            }               
+            }
         }
-        
+
 
         if (status.HP <= 0) // HPが0になると動かなくなる
         {
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
             rb.angularVelocity = Vector3.zero;
             moveForce = 0;
 
-            if(!rb.isKinematic)
+            if (!rb.isKinematic)
             {
                 rb.isKinematic = true;
             }
@@ -63,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(-moveHorizontal, 0.0f, -moveVertical) * moveForce; // 移動させるための力の大きさ
-  
+
 
         rb.AddForce(movement);  // 移動
         transform.LookAt(transform.position);
@@ -74,7 +75,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Field"))
         {
-            isJumping = false;           
+            isJumping = false;
+        }
+        if (collision.gameObject.tag == "ChangeEgg")
+        {
+            flag = 1;
         }
     }
 
@@ -83,6 +88,6 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Goal"))
         {
             SceneManager.LoadScene("Clear");
-        } 
+        }
     }
 }
