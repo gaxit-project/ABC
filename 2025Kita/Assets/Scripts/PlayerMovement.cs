@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     float moveHorizontal;           // 水平方向
     float moveVertical;             // 垂直方向
     private bool isJumping = false; // ジャンプ中かどうか
+    public bool ready = true;       //ゲーム開始前かどうか
     PlayerStatus status;
     [SerializeField] private Pause pause;
     public int flag = 0;
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!ready) return;
 
         if (Input.GetKeyDown(KeyCode.Backspace) || (Input.GetButtonDown("Fire1")))
         {
