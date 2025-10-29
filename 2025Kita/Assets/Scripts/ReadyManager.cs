@@ -8,9 +8,23 @@ public class ReadyManager : MonoBehaviour
     [SerializeField] private Text text;
     [SerializeField] private PlayerMovement player;
 
-    private void Awake()
+    private static bool reload = false;
+
+    private void Start()
     {
-        StartCoroutine(ReadyStart());
+        if (reload)
+        {
+            text.text = "";
+            Time.timeScale = 1f;
+            if(player != null)
+            {
+                player.ready = true;
+            }
+        }
+        else
+        {
+            StartCoroutine(ReadyStart());
+        }
     }
 
     private IEnumerator ReadyStart()
@@ -43,6 +57,9 @@ public class ReadyManager : MonoBehaviour
         {
             player.ready = true;
         }
+
+        //ÉVÅ[ÉìÇ1ìxì«Ç›çûÇÒÇ≈Ç¢ÇÈ
+        reload = true;
     }
 
 }
