@@ -62,4 +62,8 @@ public class ReadyManager : MonoBehaviour
         reload = true;
     }
 
+    public static void ResetReady()
+    {
+        reload = false;
+    }
 }

@@ -15,6 +15,7 @@ public class Scene : MonoBehaviour
     //TitleƒV[ƒ“‚ÉˆÚ“®
     public void ChangeTitle()
     {
+        ReadyManager.ResetReady();
         Time.timeScale = 1;
         SceneManager.LoadScene("Title");
     }
