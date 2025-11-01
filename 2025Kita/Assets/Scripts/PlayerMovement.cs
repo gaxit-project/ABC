@@ -17,12 +17,15 @@ public class PlayerMovement : MonoBehaviour
     PlayerStatus status;
     [SerializeField] private Pause pause;
     public int flag = 0;
+    public GameObject friedEgg;     // 目玉焼き
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         status = GetComponent<PlayerStatus>();
+        audioSource = friedEgg.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -89,7 +92,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Goal"))
         {
-            SceneManager.LoadScene("Clear");
+            this.gameObject.SetActive(false);
+            friedEgg.SetActive(true);
+            audioSource.Play();     //音を鳴らす
+
+            Invoke(nameof(SceneChange), 3.0f);
         }
+    }
+
+    void SceneChange()
+    {
+        SceneManager.LoadScene("Clear");
     }
 }
