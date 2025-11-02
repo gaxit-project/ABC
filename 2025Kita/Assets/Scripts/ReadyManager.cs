@@ -63,7 +63,7 @@ public class ReadyManager : MonoBehaviour
 
             //ƒV[ƒ“‚ğ1“x“Ç‚İ‚ñ‚Å‚¢‚é
             reload = true;
-        } 
+        }
 
     }
 

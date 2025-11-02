@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
-    [SerializeField] public GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenu;
 
     private PlayerInput playerInput;
 

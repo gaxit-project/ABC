@@ -86,6 +86,10 @@ public class PlayerMovement : MonoBehaviour
         {
             flag = 1;
         }
+        if (collision.gameObject.tag == "Death")
+        {
+            status.HP = 0;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -97,6 +101,10 @@ public class PlayerMovement : MonoBehaviour
             audioSource.Play();     //音を鳴らす
 
             Invoke(nameof(SceneChange), 3.0f);
+        }
+        if (other.gameObject.CompareTag("Death"))
+        {
+            status.HP = 0;
         }
     }
 

@@ -11,6 +11,22 @@ public class Scene : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Main");
     }
+    public void ChangeMain2()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main2");
+    }
+    public void ChangeMain3()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main3");
+    }
+
+    public void ChangeSelect()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("SelectStage");
+    }
 
     //TitleƒV[ƒ“‚ÉˆÚ“®
     public void ChangeTitle()
