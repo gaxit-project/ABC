@@ -10,18 +10,18 @@ public class CameraChange : MonoBehaviour
     public GameObject[] cameras;            // 使用するカメラ
     public GameObject mainCamera;           // 使用中カメラ
     public PlayerMovement[] targetScripts;  // プレイヤー移動を管理するスクリプト
-    private PlayerMovement currentScript;   // 現在動いているプレイヤーのスクリプト
+    public PlayerMovement currentScript;   // 現在動いているプレイヤーのスクリプト
     private int EggSelect = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         // 配列初期化
-        if (targetScripts.Length > 0 && targetScripts[0] != null)
+        /*if (targetScripts.Length > 0 && targetScripts[0] != null)
         {
-            currentScript = targetScripts[0];
-            currentScript.enabled = true;
-        }
+            currentScript = targetScripts[cameras.Length-1];
+            //currentScript.enabled = true;
+        }*/
 
         for (int i = 0; i < cameras.Length; i++)
         {
