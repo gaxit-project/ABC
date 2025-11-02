@@ -25,11 +25,14 @@ public class CameraChange : MonoBehaviour
 
         for (int i = 0; i < cameras.Length; i++)
         {
-            if (i != 0)   // 使用中のスクリプト以外は非アクティブにしておく
+            // 使用中のスクリプト以外は非アクティブにしておく
+            cameras[i].SetActive(false);
+
+            if (i != 0)
             {
                 if (cameras[i] != null)
                 {
-                    cameras[i].SetActive(false);
+
                 }
 
                 if (targetScripts.Length > i && targetScripts[i] != null)
@@ -37,11 +40,9 @@ public class CameraChange : MonoBehaviour
                     targetScripts[i].enabled = false;
                 }
             }
-
         }
 
         currentScript.enabled = true;               // 現在使用しているオブジェクトのスクリプトをアクティブ状態にする
-        mainCamera = GameObject.Find("Camera_1");
         mainCamera.SetActive(true);                 // 現在使用しているカメラをアクティブ状態にする
     }
 
@@ -53,10 +54,10 @@ public class CameraChange : MonoBehaviour
 
         if (currentScript.flag == 1)
         {
-            if(Input.GetButtonDown("Fire3"))
+            if (Input.GetButtonDown("Fire3"))
             {
                 EggSelect++;
-                EggChange(EggSelect%3);
+                EggChange(EggSelect % 3);
             }
 
             if (Input.GetKeyDown(KeyCode.Alpha1))

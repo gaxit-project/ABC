@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2530,6 +2530,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578559067}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1635715869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4549604806079505809, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+  m_PrefabInstance: {fileID: 2045213370}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1652353975 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 441235010869920416, guid: 763dff4349c7b19469fb6dabe1922f63, type: 3}
@@ -3100,7 +3105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6948785807809974557, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6981981892653717096, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_audioClip
@@ -3163,6 +3168,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 838879685}
     - target: {fileID: 7179881686240988316, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: friedEgg
+      value: 
+      objectReference: {fileID: 1001677814}
+    - target: {fileID: 7179881686240988316, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: moveForce
       value: 12
       objectReference: {fileID: 0}
@@ -3174,6 +3183,10 @@ PrefabInstance:
       propertyPath: pause
       value: 
       objectReference: {fileID: 838879685}
+    - target: {fileID: 7206457209204797588, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: friedEgg
+      value: 
+      objectReference: {fileID: 1001677814}
     - target: {fileID: 7206457209204797588, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: jumpPower
       value: 4
@@ -3212,7 +3225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8241767725019663745, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8938769276600283364, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalScale.x
@@ -3234,6 +3247,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9065313478059445572, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1635715869}
     m_RemovedComponents:
     - {fileID: 7403354396564482729, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
     - {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
