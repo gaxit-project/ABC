@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 932837567}
   m_Layer: 3
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1993,6 +1993,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 372157465569595722, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: roadTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 372157465569595722, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: startpoint
       value: 
       objectReference: {fileID: 1652353975}
@@ -2109,16 +2113,56 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 8c6477b2e32d1ae469c04d0c0208115e, type: 2}
     - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_ActionId
-      value: a9f325da-a96e-45c9-9513-2caecaa2f471
+      value: 55af70ba-afe2-45b2-858c-6c6c2ff3dfba
       objectReference: {fileID: 0}
     - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_ActionName
-      value: Player/Menu[/XInputControllerWindows/start,/Keyboard/tab]
+      value: Player/Menu[/XInputControllerWindows/start]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2073309481}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Pause, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4502340539372746215, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: HP
@@ -2461,6 +2505,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7403354396564482729, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: isPaused
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403354396564482729, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1850602062}
@@ -2508,9 +2556,7 @@ PrefabInstance:
       propertyPath: cameras.Array.data[1]
       value: 
       objectReference: {fileID: 1586218057}
-    m_RemovedComponents:
-    - {fileID: 7403354396564482729, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
-    - {fileID: 4297069750030745781, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2926,6 +2972,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5119200135103404097, guid: 2db3293d4665aaf47b86fa3c68165af2, type: 3}
   m_PrefabInstance: {fileID: 2068222480}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2073309481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7403354396564482729, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+  m_PrefabInstance: {fileID: 2045213370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e462e2d40947744c80f82e32f9f0fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5023221973508187244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3179,6 +3236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 5895578189938069962, guid: 30e204e1eba149e47a8a0569d685279b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3261,6 +3322,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2816549276885129882, guid: c1a2d2541cf14a44dba69cf1f600d7ef, type: 3}
+      propertyPath: m_text
+      value: "move      :stick\t\njump       :A button\n\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 4254838364811124606, guid: c1a2d2541cf14a44dba69cf1f600d7ef, type: 3}
       propertyPath: m_Pivot.x
       value: 0

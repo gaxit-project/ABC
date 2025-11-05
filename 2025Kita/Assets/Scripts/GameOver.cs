@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] public GameObject crackedEgg;  // 割れた後のオブジェクト
     PlayerStatus status;
     public MeshRenderer Food_EggRenderer;
+    public float roadTime = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,13 @@ public class GameOver : MonoBehaviour
             egg.SetActive(false);
             crackedEgg.SetActive(true);
             crackedEgg.transform.position = egg.transform.position;
-            
-            if(Input.GetKeyDown(KeyCode.Return) || (Input.GetButtonDown("Fire1")))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
-            }
+
+            Invoke(nameof(SceneChange), roadTime);
         }
+    }
+
+    void SceneChange()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
     }
 }
