@@ -18,6 +18,13 @@ public class StageCamera : MonoBehaviour
 
     public IEnumerator IntroCamera()
     {
+        //バグが起きないため
+        yield return null; // 保険で1フレーム待機
+
+        if (!gameObject.activeInHierarchy)
+            yield break;
+        
+
         playerCamera.SetActive(false);
 
         Time.timeScale = 0;
