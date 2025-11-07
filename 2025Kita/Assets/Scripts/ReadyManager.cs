@@ -8,10 +8,11 @@ public class ReadyManager : MonoBehaviour
     [SerializeField] private Text text;
     [SerializeField] private PlayerMovement player;
     [SerializeField] private Pause pause;
+    [SerializeField] private StageCamera sc;
 
     private static bool reload = false;
 
-    private void Start()
+    private IEnumerator Start()
     {
         if (reload)
         {
@@ -24,7 +25,9 @@ public class ReadyManager : MonoBehaviour
         }
         else
         {
-            StartCoroutine(ReadyStart());
+            yield return StartCoroutine(sc.IntroCamera());
+            yield return StartCoroutine(ShowPurpose());
+            yield return StartCoroutine(ReadyStart());
         }
     }
 
@@ -71,4 +74,18 @@ public class ReadyManager : MonoBehaviour
     {
         reload = false;
     }
+
+    private IEnumerator ShowPurpose()
+    {
+        int count = 3;
+        Time.timeScale = 0;
+
+        while(count > 0)
+        {
+            text.text = "フライパンに飛び込め！";
+            yield return new WaitForSecondsRealtime(1f);
+            count--;
+        }
+        
+    } 
 }

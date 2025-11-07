@@ -47,4 +47,9 @@ public class Scene : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Announce()
+    {
+
+    }
 }
