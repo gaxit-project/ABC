@@ -25,7 +25,10 @@ public class ReadyManager : MonoBehaviour
         }
         else
         {
-            yield return StartCoroutine(sc.IntroCamera());
+            if(sc != null)
+            {
+                yield return StartCoroutine(sc.IntroCamera());
+            }
             yield return StartCoroutine(ShowPurpose());
             yield return StartCoroutine(ReadyStart());
         }

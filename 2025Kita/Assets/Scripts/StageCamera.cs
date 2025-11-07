@@ -20,6 +20,8 @@ public class StageCamera : MonoBehaviour
     {
         playerCamera.SetActive(false);
 
+        Time.timeScale = 0;
+
         transform.position = startPoint.position;
         transform.rotation = startPoint.rotation;
 
@@ -53,6 +55,8 @@ public class StageCamera : MonoBehaviour
         }
 
         yield return new WaitForSecondsRealtime(2f);
+
+        Time.timeScale = 1;
 
         playerCamera.SetActive(true);
         gameObject.SetActive(false);
