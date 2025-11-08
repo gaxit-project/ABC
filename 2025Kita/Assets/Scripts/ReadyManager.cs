@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,7 +37,7 @@ public class ReadyManager : MonoBehaviour
         }
     }
 
-    //ƒXƒ^[ƒg‘O‚ÌƒJƒEƒ“ƒgƒ_ƒEƒ“
+    //ï¿½Xï¿½^ï¿½[ï¿½gï¿½Oï¿½ÌƒJï¿½Eï¿½ï¿½ï¿½gï¿½_ï¿½Eï¿½ï¿½
     private IEnumerator ReadyStart()
     {
         int count = 3;
@@ -49,7 +49,7 @@ public class ReadyManager : MonoBehaviour
             player.ready = false;
         }
 
-        //ƒQ[ƒ€ŠJn‚Ü‚Å‘Ò‹@‚µ‚Ä‚¢‚éŠÔ‚Ìˆ—
+        //ï¿½Qï¿½[ï¿½ï¿½ï¿½Jï¿½nï¿½Ü‚Å‘Ò‹@ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Ô‚Ìï¿½ï¿½ï¿½
         while(count > 0)
         {
             text.text = "Ready...";
@@ -59,7 +59,7 @@ public class ReadyManager : MonoBehaviour
 
         yield return new WaitUntil(() => !pause.isPaused);
 
-        //ƒQ[ƒ€ŠJn‚µ‚½‚Æ‚«‚Ìˆ—
+        //ï¿½Qï¿½[ï¿½ï¿½ï¿½Jï¿½nï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ìï¿½ï¿½ï¿½
         text.text = "Start!";
         yield return new WaitForSecondsRealtime(1f);
         text.gameObject.SetActive(false);
@@ -71,12 +71,12 @@ public class ReadyManager : MonoBehaviour
             player.ready = true;
         }
 
-            //ƒV[ƒ“‚ğ1“x“Ç‚İ‚ñ‚Å‚¢‚é
+            //ï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½1ï¿½xï¿½Ç‚İï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
             reload = true;
 
     }
 
-    //ƒXƒ^[ƒg‘O‚Ì–Ú“I•\¦
+    //ï¿½Xï¿½^ï¿½[ï¿½gï¿½Oï¿½Ì–Ú“Iï¿½\ï¿½ï¿½
     private IEnumerator ShowPurpose()
     {
         int count = 3;
@@ -84,20 +84,20 @@ public class ReadyManager : MonoBehaviour
 
         while(count > 0)
         {
-            text.text = "ƒtƒ‰ƒCƒpƒ“‚É”ò‚Ñ‚ßI";
+            text.text = "ãƒ•ãƒ©ã‚¤ãƒ‘ãƒ³ã«é£›ã³è¾¼ã‚ï¼";
             yield return new WaitForSecondsRealtime(1f);
             count--;
         }
         
     }
 
-    //‚à‚¤ˆê“xƒV[ƒ“‚ğ“Ç‚İ‚Ş‚©
+    //ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½Vï¿½[ï¿½ï¿½ï¿½ï¿½Ç‚İï¿½ï¿½Ş‚ï¿½
     public static void ResetReady()
     {
         reload = false;
     }
 
-    //ƒXƒLƒbƒvƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚©
+    //ï¿½Xï¿½Lï¿½bï¿½vï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½
     public void SkipCamera()
     {
         sc.skip = true;
