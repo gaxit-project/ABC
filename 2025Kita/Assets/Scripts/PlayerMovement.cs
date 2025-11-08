@@ -33,13 +33,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!ready) return;
 
-        if (Input.GetKeyDown(KeyCode.Backspace) || (Input.GetButtonDown("Fire1")))
+        /*if (Input.GetKeyDown(KeyCode.Backspace) || (Input.GetButtonDown("Fire1")))
         {
             if (pause != null && !pause.isPaused) //ポーズ画面を開いている間は開けない
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
             }
-        }
+        }*/
 
 
         if (status.HP <= 0) // HPが0になると動かなくなる
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)  // 地面との接触判定
+    private void OnCollisionEnter(Collision collision)  // 接触判定
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Field"))
         {

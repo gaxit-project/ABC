@@ -16,13 +16,6 @@ public class CameraChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 配列初期化
-        /*if (targetScripts.Length > 0 && targetScripts[0] != null)
-        {
-            currentScript = targetScripts[cameras.Length-1];
-            //currentScript.enabled = true;
-        }*/
-
         for (int i = 0; i < cameras.Length; i++)
         {
             // 使用中のスクリプト以外は非アクティブにしておく
@@ -30,11 +23,6 @@ public class CameraChange : MonoBehaviour
 
             if (i != 0)
             {
-                if (cameras[i] != null)
-                {
-
-                }
-
                 if (targetScripts.Length > i && targetScripts[i] != null)
                 {
                     targetScripts[i].enabled = false;

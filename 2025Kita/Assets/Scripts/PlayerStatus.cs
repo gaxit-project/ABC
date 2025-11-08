@@ -25,13 +25,13 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.DrawLine(rayPosition.position, rayPosition.position + Vector3.down * rayRange, Color.blue); // レイを可視化
+        Debug.DrawRay(rayPosition.position, Vector3.up * rayRange, Color.blue); // レイを可視化
 
         if (isFall)
         {
             fallenPosition = Mathf.Max(fallenPosition, transform.position.y);   
 
-            if (Physics.Linecast(rayPosition.position, rayPosition.position + Vector3.down * rayRange, LayerMask.GetMask("Field"))) //　着地したか判断
+            if (Physics.Linecast(rayPosition.position, rayPosition.position + Vector3.up * rayRange, LayerMask.GetMask("Field"))) //　着地したか判断
             {
                 fallenDistance = fallenPosition - transform.position.y; //　落下距離を計算
                 

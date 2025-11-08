@@ -23,13 +23,11 @@ public class GameOver : MonoBehaviour
     {
         if(status.HP <= 0)
         {
-            //Food_EggRenderer.enabled = false;
-
             egg.SetActive(false);
             crackedEgg.SetActive(true);
             crackedEgg.transform.position = egg.transform.position;
 
-            Invoke(nameof(SceneChange), roadTime);
+            Invoke(nameof(SceneChange), roadTime);  // roadTImeで設定した時間が経つとシーン移動する
         }
     }
 
