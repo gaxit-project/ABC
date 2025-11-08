@@ -24,6 +24,7 @@ public class Scene : MonoBehaviour
 
     public void ChangeSelect()
     {
+        ReadyManager.ResetReady();
         Time.timeScale = 1;
         SceneManager.LoadScene("SelectStage");
     }
@@ -31,7 +32,6 @@ public class Scene : MonoBehaviour
     //TitleƒV[ƒ“‚ÉˆÚ“®
     public void ChangeTitle()
     {
-        ReadyManager.ResetReady();
         Time.timeScale = 1;
         SceneManager.LoadScene("Title");
     }

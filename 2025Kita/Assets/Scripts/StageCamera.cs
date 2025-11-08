@@ -11,6 +11,8 @@ public class StageCamera : MonoBehaviour
     [SerializeField] private float rotationSpeed = 3f;  //ƒJƒƒ‰‚ÌŒü‚«‚ª•Ï‚í‚é‘¬‚³
     [SerializeField] GameObject playerCamera;
 
+    public bool skip = false;
+
     void Update()
     {
         
@@ -23,7 +25,7 @@ public class StageCamera : MonoBehaviour
 
         if (!gameObject.activeInHierarchy)
             yield break;
-        
+
 
         playerCamera.SetActive(false);
 
@@ -34,11 +36,13 @@ public class StageCamera : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(2f);
 
-        for(int i = 0; i < points.Length; i++)
+        for (int i = 0; i < points.Length; i++)
         {
-            Transform target = points[i]; 
+            if(skip) break;
+            Transform target = points[i];
             while (Vector3.Distance(transform.position, target.position) > 0.1f)
             {
+                if (skip) break;
                 //Œü‚«‚ğ•Ï‚¦‚éˆ—
                 Vector3 direction = (target.position - transform.position).normalized;
                 if (direction.magnitude > 0.001f)
@@ -68,4 +72,6 @@ public class StageCamera : MonoBehaviour
         playerCamera.SetActive(true);
         gameObject.SetActive(false);
     }
+
+    
 }

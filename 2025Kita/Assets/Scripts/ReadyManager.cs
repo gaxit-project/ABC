@@ -25,7 +25,7 @@ public class ReadyManager : MonoBehaviour
         }
         else
         {
-            if(sc != null)
+            if (sc != null)
             {
                 yield return StartCoroutine(sc.IntroCamera());
             }
@@ -53,23 +53,22 @@ public class ReadyManager : MonoBehaviour
             count--;
         }
 
-        if (!pause.isPaused)
+        yield return new WaitUntil(() => !pause.isPaused);
+
+        //ゲーム開始したときの処理
+        text.text = "Start!";
+        yield return new WaitForSecondsRealtime(1f);
+        text.gameObject.SetActive(false);
+
+        Time.timeScale = 1;
+
+        if (player != null)
         {
-            //ゲーム開始したときの処理
-            text.text = "Start!";
-            yield return new WaitForSecondsRealtime(1f);
-            text.gameObject.SetActive(false);
-
-            Time.timeScale = 1;
-
-            if (player != null)
-            {
-                player.ready = true;
-            }
+            player.ready = true;
+        }
 
             //シーンを1度読み込んでいる
             reload = true;
-        }
 
     }
 
@@ -90,5 +89,10 @@ public class ReadyManager : MonoBehaviour
             count--;
         }
         
-    } 
+    }
+
+    public void SkipCamera()
+    {
+        sc.skip = true;
+    }
 }

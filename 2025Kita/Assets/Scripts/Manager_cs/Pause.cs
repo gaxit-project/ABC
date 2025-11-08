@@ -1,29 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private StageCamera sc;
 
-    private PlayerInput playerInput;
 
     public bool isPaused = false;
 
-    private void Awake()
-    {
-        playerInput = GetComponent<PlayerInput>();
-    }
-
-    public void OnMenu(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            PauseGame();
-        }
-        
-    }
+    
 
     //ポーズ画面を開く
     public void PauseGame()
