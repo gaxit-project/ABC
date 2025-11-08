@@ -29,11 +29,15 @@ public class ReadyManager : MonoBehaviour
             {
                 yield return StartCoroutine(sc.IntroCamera());
             }
-            yield return StartCoroutine(ShowPurpose());
-            yield return StartCoroutine(ReadyStart());
+            if(text != null)
+            {
+                yield return StartCoroutine(ShowPurpose());
+                yield return StartCoroutine(ReadyStart());
+            }
         }
     }
 
+    //スタート前のカウントダウン
     private IEnumerator ReadyStart()
     {
         int count = 3;
@@ -72,11 +76,7 @@ public class ReadyManager : MonoBehaviour
 
     }
 
-    public static void ResetReady()
-    {
-        reload = false;
-    }
-
+    //スタート前の目的表示
     private IEnumerator ShowPurpose()
     {
         int count = 3;
@@ -91,6 +91,13 @@ public class ReadyManager : MonoBehaviour
         
     }
 
+    //もう一度シーンを読み込むか
+    public static void ResetReady()
+    {
+        reload = false;
+    }
+
+    //スキップボタンが押されたか
     public void SkipCamera()
     {
         sc.skip = true;

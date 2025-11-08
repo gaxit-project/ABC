@@ -7,12 +7,9 @@ public class Pause : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private StageCamera sc;
 
-
     public bool isPaused = false;
 
-    
-
-    //ポーズ画面を開く
+    //ポーズ画面を開くかどうか判断
     public void PauseGame()
     {
         if (!isPaused)
@@ -25,6 +22,7 @@ public class Pause : MonoBehaviour
         }
     }
 
+    //ポーズ画面を開く
     public void StartPause()
     {
         Time.timeScale = 0;

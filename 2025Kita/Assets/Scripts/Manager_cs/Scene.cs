@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Scene : MonoBehaviour
 {
+    [SerializeField] private Canvas normalCanvas;
+    [SerializeField] private GameObject quitCanvas;
+    [SerializeField] private Button firstQuitButton;
+    [SerializeField] private Button secondQuitButton;
+    private bool quit = false;
+
     //MainÉVÅ[ÉìÇ…à⁄ìÆ
     public void ChangeMain()
     {
@@ -50,6 +58,20 @@ public class Scene : MonoBehaviour
 
     public void Announce()
     {
-
+        if(!quit)
+        {
+            quitCanvas.gameObject.SetActive(true);
+            normalCanvas.gameObject.SetActive(false);
+            //normalCanvas.GetComponent<GraphicRaycaster>().enabled = false;
+            EventSystem.current.SetSelectedGameObject(firstQuitButton.gameObject);
+            quit = true;
+        }
+        else
+        {
+            quitCanvas.gameObject.SetActive(false);
+            normalCanvas.gameObject.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(secondQuitButton.gameObject);
+            quit = false;
+        }
     }
 }

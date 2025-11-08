@@ -13,11 +13,7 @@ public class StageCamera : MonoBehaviour
 
     public bool skip = false;
 
-    void Update()
-    {
-        
-    }
-
+    //スタート前のカメラ移動処理
     public IEnumerator IntroCamera()
     {
         //バグが起きないため

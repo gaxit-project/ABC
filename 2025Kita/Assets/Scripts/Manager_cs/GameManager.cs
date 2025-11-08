@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Pause pause;
     [SerializeField] private ReadyManager readyManager;
-
+    [SerializeField] private Scene scene;
 
     private PlayerInput playerInput;
 
@@ -33,7 +33,10 @@ public class GameManager : MonoBehaviour
     {
         if (context.performed)
         {
-            pause.PauseGame();
+            if(pause != null)
+            {
+                pause.PauseGame();
+            }
         }
 
     }
@@ -46,6 +49,14 @@ public class GameManager : MonoBehaviour
             {
                 readyManager.SkipCamera();
             }
+        }
+    }
+
+    public void OnQuit(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            scene.Announce();
         }
     }
 }
