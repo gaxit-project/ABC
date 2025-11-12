@@ -11,6 +11,7 @@ public class ReadyManager : MonoBehaviour
     [SerializeField] private StageCamera sc;
 
     private static bool reload = false;
+    public bool isReady = true;
 
     private IEnumerator Start()
     {
@@ -65,6 +66,8 @@ public class ReadyManager : MonoBehaviour
         text.gameObject.SetActive(false);
 
         Time.timeScale = 1;
+
+        isReady = false;
 
         if (player != null)
         {

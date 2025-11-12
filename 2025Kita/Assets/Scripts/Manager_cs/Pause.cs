@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private StageCamera sc;
+    [SerializeField] private ReadyManager rm;
 
     public bool isPaused = false;
 
@@ -35,10 +35,13 @@ public class Pause : MonoBehaviour
     //ƒ|[ƒY‰æ–Ê‚ğ•Â‚¶‚é
     public void ClosePause()
     {
-        Time.timeScale = 1;
-
         pauseMenu.SetActive(false);
 
         isPaused = false;
+
+        if (!rm.isReady)
+        {
+            Time.timeScale = 1;
+        }
     }
 }
