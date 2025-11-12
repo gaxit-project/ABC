@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     public float moveForce = 5f;    // 移動するための力の強さ
     public float jumpPower = 200f;  // ジャンプ力
+    public float deceleration = 0.7f; // ジャンプ中の移動速度
     float moveHorizontal;           // 水平方向
     float moveVertical;             // 垂直方向
     private bool isJumping = false; // ジャンプ中かどうか
@@ -33,15 +34,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!ready) return;
 
-        /*if (Input.GetKeyDown(KeyCode.Backspace) || (Input.GetButtonDown("Fire1")))
-        {
-            if (pause != null && !pause.isPaused) //ポーズ画面を開いている間は開けない
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
-            }
-        }*/
-
-
         if (status.HP <= 0) // HPが0になると動かなくなる
         {
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
@@ -58,8 +50,10 @@ public class PlayerMovement : MonoBehaviour
 
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
+
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")) && !isJumping)
         {
+            Vector3 currentVelocity = rb.velocity;
             rb.velocity = Vector3.up * jumpPower;  // ジャンプ
             isJumping = true;
         }
@@ -68,7 +62,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(-moveHorizontal, 0.0f, -moveVertical) * moveForce; // 移動させるための力の大きさ
+        float moveMultiplier;
+        if (!isJumping) moveMultiplier = 1.0f;
+        else moveMultiplier = 0.6f; // ジャンプの時は移動速度を遅くする
+
+        Vector3 movement = new Vector3(-moveHorizontal, 0.0f, -moveVertical) * moveForce * moveMultiplier; // 移動させるための力の大きさ
 
 
         rb.AddForce(movement);  // 移動
