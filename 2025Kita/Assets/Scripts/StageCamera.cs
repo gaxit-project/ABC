@@ -40,6 +40,7 @@ public class StageCamera : MonoBehaviour
             {
                 if (skip) break;
                 //Œü‚«‚ğ•Ï‚¦‚éˆ—
+                /*
                 Vector3 direction = (target.position - transform.position).normalized;
                 if (direction.magnitude > 0.001f)
                 {
@@ -49,7 +50,7 @@ public class StageCamera : MonoBehaviour
                         lookRotation,
                         rotationSpeed * Time.unscaledDeltaTime
                     );
-                }
+                }*/
 
                 // ˆÚ“®ˆ—
                 transform.position = Vector3.MoveTowards(
