@@ -18,6 +18,7 @@ public class ReadyManager : MonoBehaviour
         if (reload)
         {
             text.text = "";
+            isReady = false;
             Time.timeScale = 1f;
             if(player != null)
             {
