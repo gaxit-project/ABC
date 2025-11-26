@@ -13,8 +13,6 @@ public class PlayerMovement : MonoBehaviour
     public float moveForce = 5f;    // 移動するための力の強さ
     public float jumpPower = 200f;  // ジャンプ力
 
-    //public float deceleration = 0.7f; // ジャンプ中の移動速度
-
     float moveHorizontal;           // 水平方向
     float moveVertical;             // 垂直方向
     private bool isJumping = false; // ジャンプ中かどうか
@@ -104,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             friedEgg.SetActive(true);
-            audioSource.Play();     //音を鳴らす
+            audioSource.Play();  
 
             Invoke(nameof(SceneChange), 3.0f);
         }

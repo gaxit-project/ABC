@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveDoor : MonoBehaviour
 {
-    float defaltY;
-    float openY = 6f;
+    float defaltY;  // ドアの初期位置
+    float openY = 6f;   
     float speed = 2f;
 
     public bool isOpen;

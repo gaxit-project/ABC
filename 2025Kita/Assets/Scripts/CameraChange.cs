@@ -14,7 +14,6 @@ public class CameraChange : MonoBehaviour
     public PlayerMovement[] targetScripts;  // プレイヤー移動を管理するスクリプト
     public PlayerMovement currentScript;   // 現在動いているプレイヤーのスクリプト
     private int EggSelect = 0;
-    //public int Changenum;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +27,10 @@ public class CameraChange : MonoBehaviour
 
         for (int i = 0; i < cameras.Length; i++)
         {
-            // 使用中のスクリプト以外は非アクティブにしておく
-            //cameras[i].SetActive(true); 
             CinemachineVirtualCamera vcam = cameras[i].GetComponent<CinemachineVirtualCamera>();
 
             if (vcam != null)
-            {
-                // 初期キャラのVCamのみ Priority を高く設定 (例: 15)
+            { 
                 vcam.Priority = (i == startIndex) ? 15 : 5;
             }
 
@@ -48,10 +44,6 @@ public class CameraChange : MonoBehaviour
         {
             SubscribeToPlayerCollision(currentScript);
         }
-
-        /*SubscribeToPlayerCollision(currentScript);
-        currentScript.enabled = true;               // 現在使用しているオブジェクトのスクリプトをアクティブ状態にする
-        mainCamera.SetActive(true);                 // 現在使用しているカメラをアクティブ状態にする*/
     }
 
     private void Update()
@@ -84,7 +76,6 @@ public class CameraChange : MonoBehaviour
 
             currentScript.SetMoveStop(true);
 
-            // 現在のVCamの優先度を下げる (5)
             GameObject oldCameraObject = cameras[Array.IndexOf(targetScripts, currentScript)];
             CinemachineVirtualCamera oldVcam = oldCameraObject.GetComponent<CinemachineVirtualCamera>();
 
@@ -92,19 +83,12 @@ public class CameraChange : MonoBehaviour
             {
                 oldVcam.Priority = 5;
             }
-
-            /*if (mainCamera != null)
-            {
-                mainCamera.SetActive(false);
-            }*/
         }
 
         if (num < cameras.Length && num < targetScripts.Length)
         {
-            //mainCamera = cameras[num];
             currentScript = targetScripts[num];
 
-            // 新しいVCamの優先度を上げる (15)
             GameObject newCameraObject = cameras[num];
             CinemachineVirtualCamera newVcam = newCameraObject.GetComponent<CinemachineVirtualCamera>();
 
@@ -112,7 +96,6 @@ public class CameraChange : MonoBehaviour
             {
                 newVcam.Priority = 15;
             }
-            //mainCamera.SetActive(true);
             currentScript.SetMoveStop(false);
             SubscribeToPlayerCollision(currentScript);
          }
