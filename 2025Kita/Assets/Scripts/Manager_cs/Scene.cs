@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,7 +13,7 @@ public class Scene : MonoBehaviour
     [SerializeField] private Button secondQuitButton;
     private bool quit = false;
 
-    //MainƒV[ƒ“‚ÉˆÚ“®
+    //Mainï¿½Vï¿½[ï¿½ï¿½ï¿½ÉˆÚ“ï¿½
     public void ChangeMain()
     {
         Time.timeScale = 1;
@@ -30,6 +30,12 @@ public class Scene : MonoBehaviour
         SceneManager.LoadScene("Main3");
     }
 
+    public void ChangeMain4()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main4");
+    }
+
     public void ChangeSelect()
     {
         ReadyManager.ResetReady();
@@ -37,14 +43,14 @@ public class Scene : MonoBehaviour
         SceneManager.LoadScene("SelectStage");
     }
 
-    //TitleƒV[ƒ“‚ÉˆÚ“®
+    //Titleï¿½Vï¿½[ï¿½ï¿½ï¿½ÉˆÚ“ï¿½
     public void ChangeTitle()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Title");
     }
 
-    //ClearƒV[ƒ“‚ÉˆÚ“®
+    //Clearï¿½Vï¿½[ï¿½ï¿½ï¿½ÉˆÚ“ï¿½
     public void ChangeClear()
     {
         Time.timeScale = 1;

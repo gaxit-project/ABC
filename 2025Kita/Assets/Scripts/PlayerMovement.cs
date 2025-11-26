@@ -4,29 +4,38 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
+
     public float moveForce = 5f;    // 移動するための力の強さ
     public float jumpPower = 200f;  // ジャンプ力
-    public float deceleration = 0.7f; // ジャンプ中の移動速度
+
+    //public float deceleration = 0.7f; // ジャンプ中の移動速度
+
     float moveHorizontal;           // 水平方向
     float moveVertical;             // 垂直方向
     private bool isJumping = false; // ジャンプ中かどうか
     public bool ready = true;       //ゲーム開始前かどうか
+    public bool isStopMovement = false;   // 動きを止めるかどうかのフラグ
+
     PlayerStatus status;
     [SerializeField] private Pause pause;
-    public int flag = 0;
     public GameObject friedEgg;     // 目玉焼き
     private AudioSource audioSource;
+    public event Action<GameObject> OnEggCollided;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         status = GetComponent<PlayerStatus>();
-        audioSource = friedEgg.GetComponent<AudioSource>();
+        if(friedEgg != null)
+        {
+            audioSource = friedEgg.GetComponent<AudioSource>();
+        }        
     }
 
     // Update is called once per frame
@@ -34,26 +43,25 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!ready) return;
 
-        if (status.HP <= 0) // HPが0になると動かなくなる
+        if (status != null && status.HP <= 0) // HPが0になると動かなくなる
         {
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            rb.angularVelocity = Vector3.zero;
-            moveForce = 0;
-
-            if (!rb.isKinematic)
+            if(rb != null)
             {
-                rb.isKinematic = true;
+                rb.velocity = new Vector3(0, rb.velocity.y, 0);
+                rb.angularVelocity = Vector3.zero;
+                moveForce = 0;
             }
-
+            moveForce = 0;            
             return;
         }
+
+        if (isStopMovement) return;
 
         moveHorizontal = Input.GetAxis("Horizontal");
         moveVertical = Input.GetAxis("Vertical");
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")) && !isJumping)
         {
-            Vector3 currentVelocity = rb.velocity;
             rb.velocity = Vector3.up * jumpPower;  // ジャンプ
             isJumping = true;
         }
@@ -62,6 +70,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(status.HP <= 0 || isStopMovement)
+        {
+            return;
+        }
+
         float moveMultiplier;
         if (!isJumping) moveMultiplier = 1.0f;
         else moveMultiplier = 0.6f; // ジャンプの時は移動速度を遅くする
@@ -70,7 +83,6 @@ public class PlayerMovement : MonoBehaviour
 
 
         rb.AddForce(movement);  // 移動
-        transform.LookAt(transform.position);
 
     }
 
@@ -79,10 +91,6 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Field"))
         {
             isJumping = false;
-        }
-        if (collision.gameObject.tag == "ChangeEgg")
-        {
-            flag = 1;
         }
         if (collision.gameObject.tag == "Death")
         {
@@ -100,14 +108,37 @@ public class PlayerMovement : MonoBehaviour
 
             Invoke(nameof(SceneChange), 3.0f);
         }
-        if (other.gameObject.CompareTag("Death"))
+        if(other.gameObject.CompareTag("ChangeEgg"))
         {
-            status.HP = 0;
+            OnEggCollided?.Invoke(other.gameObject);
         }
     }
 
     void SceneChange()
     {
         SceneManager.LoadScene("Clear");
+    }
+
+    public void SetMoveStop(bool isStopped)
+    {
+        this.isStopMovement = isStopped;
+
+        if(rb == null)
+        {
+            rb = GetComponent<Rigidbody>();
+            if (rb == null) return;
+        }
+       
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        
+        if(isStopped)
+        {
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        }
+        else
+        {
+            rb.constraints = RigidbodyConstraints.None;
+        }
     }
 }

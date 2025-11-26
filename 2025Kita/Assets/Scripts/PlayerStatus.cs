@@ -35,12 +35,12 @@ public class PlayerStatus : MonoBehaviour
                 fallenDistance = fallenPosition - transform.position.y; //　落下距離を計算
                 
                 // 落下距離と与えるダメージ
-                if (fallenDistance >= takeDamageDistance)
+                /*if (fallenDistance >= takeDamageDistance)
                 {
                     HP -= (int)((fallenDistance - takeDamageDistance) * 100);
 
                     Debug.LogFormat("ダメージ" + (int)((fallenDistance - takeDamageDistance) * 200) + "残りHP" + HP);
-                }
+                }*/
                 isFall = false;
             }
         }

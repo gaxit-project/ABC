@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 323432688}
   - component: {fileID: 323432687}
   m_Layer: 5
-  m_Name: Start
+  m_Name: Start (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,7 +602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -575, y: -120}
+  m_AnchoredPosition: {x: -350, y: 0}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323432687
@@ -1304,7 +1304,7 @@ GameObject:
   - component: {fileID: 791016959}
   - component: {fileID: 791016958}
   m_Layer: 5
-  m_Name: Start (2)
+  m_Name: Start (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1327,7 +1327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 575, y: -120}
+  m_AnchoredPosition: {x: -350, y: -180}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &791016958
@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 1129697276}
   - component: {fileID: 1129697275}
   m_Layer: 5
-  m_Name: Start (3)
+  m_Name: Start (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1676,7 +1676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -120}
+  m_AnchoredPosition: {x: 350, y: 0}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129697275
@@ -2273,8 +2273,8 @@ RectTransform:
   - {fileID: 107804281}
   - {fileID: 323432686}
   - {fileID: 1129697274}
-  - {fileID: 2091655565}
   - {fileID: 791016957}
+  - {fileID: 2091655565}
   - {fileID: 352911026}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2868,7 +2868,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Stage2
+  m_Text: Stage4
 --- !u!222 &2089575565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2965,12 +2965,12 @@ GameObject:
   - component: {fileID: 2091655567}
   - component: {fileID: 2091655566}
   m_Layer: 5
-  m_Name: Start (1)
+  m_Name: Start (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2091655565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2988,8 +2988,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 500, y: 300}
+  m_AnchoredPosition: {x: 350, y: -180}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091655566
 MonoBehaviour:
@@ -3037,7 +3037,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2044586650}
         m_TargetAssemblyTypeName: Scene, Assembly-CSharp
-        m_MethodName: ChangeMain2
+        m_MethodName: ChangeMain4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
