@@ -7,6 +7,8 @@ public class FallDown : MonoBehaviour
     public GameObject pushObject;   // このオブジェクトを押すことができるオブジェクト
     Rigidbody rb;
     int force = 50;
+    private float waitseconds = 5f;
+    public bool isFalled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,14 @@ public class FallDown : MonoBehaviour
             pushDirection.y = 0;
             pushDirection.Normalize();
             rb.AddForce(pushDirection * force, ForceMode.Force);
+
+            StartCoroutine(WaitSeconds());
         }
+    }
+
+    private IEnumerator WaitSeconds()
+    {
+        yield return new WaitForSeconds(waitseconds);
+        isFalled = true;
     }
 }
