@@ -48,7 +48,7 @@ public class CameraChange : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("Fire1"))
         {
             EggSelect = (EggSelect+1) % targetScripts.Length;
             EggChange(EggSelect);
