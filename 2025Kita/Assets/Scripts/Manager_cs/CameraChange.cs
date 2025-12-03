@@ -20,9 +20,9 @@ public class CameraChange : MonoBehaviour
     {
         int startIndex = Mathf.Clamp(EggSelect, 0, targetScripts.Length - 1);
 
-        if(currentScript == null && targetScripts.Length > 0)
+        if(targetScripts.Length > startIndex)
         {
-            currentScript = targetScripts[0];
+            currentScript = targetScripts[startIndex];
         }
 
         for (int i = 0; i < cameras.Length; i++)
@@ -36,7 +36,7 @@ public class CameraChange : MonoBehaviour
 
             if (targetScripts.Length > i && targetScripts[i] != null)
             {
-                targetScripts[i].SetMoveStop(i != 0);
+                targetScripts[i].SetMoveStop(i != startIndex);
             }
         }
 
@@ -109,8 +109,6 @@ public class CameraChange : MonoBehaviour
             collodedObject.SetActive(false);
         }
         EggSelect = (EggSelect + 1) % targetScripts.Length;
-        EggChange(EggSelect);
-        EggSelect++;
-        
+        EggChange(EggSelect);        
     }
 }

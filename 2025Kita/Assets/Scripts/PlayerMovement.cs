@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false; // ジャンプ中かどうか
     public bool ready = true;       //ゲーム開始前かどうか
     public bool isStopMovement = false;   // 動きを止めるかどうかのフラグ
+    public bool isGoal = false;
 
     PlayerStatus status;
     [SerializeField] private Pause pause;
@@ -33,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
         if(friedEgg != null)
         {
             audioSource = friedEgg.GetComponent<AudioSource>();
-        }        
+        }
+        GetComponent<ClearConditions>();
     }
 
     // Update is called once per frame
@@ -102,19 +104,15 @@ public class PlayerMovement : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             friedEgg.SetActive(true);
-            audioSource.Play();  
-
-            Invoke(nameof(SceneChange), 3.0f);
+            audioSource.Play();
+            ClearConditions.clearFlag++;
+            
         }
-        if(other.gameObject.CompareTag("ChangeEgg"))
+
+        /*if(other.gameObject.CompareTag("ChangeEgg"))
         {
             OnEggCollided?.Invoke(other.gameObject);
-        }
-    }
-
-    void SceneChange()
-    {
-        SceneManager.LoadScene("Clear");
+        }*/
     }
 
     public void SetMoveStop(bool isStopped)

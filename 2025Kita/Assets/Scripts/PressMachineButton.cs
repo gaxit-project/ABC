@@ -1,11 +1,13 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 
-public class DoorButton : MonoBehaviour
+public class PressMachineButton : MonoBehaviour
 {
     public float bottomY = -0.01f;   // ボタンの沈む最大座標
     public float speed = 0.1f;  // ボタンの移動速度
-    public MoveDoor door;
+    public StopPressMachine sPM;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
@@ -32,7 +34,7 @@ public class DoorButton : MonoBehaviour
             // ボタンが完全に沈んでいる（目標位置にある）場合のみドアを開ける
             if (transform.position.y <= bottomY)
             {
-                door.isOpen = true; 
+                sPM.isStop = true; // プレス機を止める
             }
         }
         else // 触れていなければ元の位置に戻る
@@ -49,20 +51,26 @@ public class DoorButton : MonoBehaviour
 
             if (transform.position.y >= startY)
             {
-                door.isOpen = false; 
+                sPM.isStop = false;
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-       isPlayerTouching = true; 
-       GetComponent<Renderer>().material.color = Color.green;
+        if (other.gameObject.name == "quail_egg")
+        {
+            isPlayerTouching = true;
+            GetComponent<Renderer>().material.color = Color.green;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        isPlayerTouching = false; 
-        GetComponent<Renderer>().material.color = Color.white; 
+        if(other.gameObject.name == "quail_egg")
+        {
+            isPlayerTouching = false;
+            GetComponent<Renderer>().material.color = Color.white;
+        }
     }
 }
