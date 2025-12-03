@@ -14,87 +14,97 @@ public class Scene : MonoBehaviour
     [SerializeField] private Button firstQuitButton;
     [SerializeField] private Button secondQuitButton;
     [SerializeField] private Sound sound;
+    [SerializeField] private float time = 0.2f;
     private bool quit = false;
 
-    //Main�V�[���Ɉړ�
-    public void ChangeMain()
+    //シーン移動処理
+    private void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(sceneName);
+    }
+    //Mainシーン移動
+    private void ChangeMain()
+    {
+        ChangeScene("Main");
     }
     public void ChangeMainInvoke()
     {
         PlaySE();
         Time.timeScale = 1;
-        Invoke("ChangeMain", 0.3f);
+        Invoke("ChangeMain", time);
     }
-    public void ChangeMain2()
+    //Main2シーン移動
+    private void ChangeMain2()
     {
-        SceneManager.LoadScene("Main2");
+        ChangeScene("Main2");
     }
     public void ChangeMain2Invoke()
     {
         PlaySE();
         Time.timeScale = 1;
-        Invoke("ChangeMain2", 0.3f);
+        Invoke("ChangeMain2", time);
     }
-    public void ChangeMain3()
+    //Main3シーン移動
+    private void ChangeMain3()
     {
-        SceneManager.LoadScene("Main3");
+        ChangeScene("Main3");
     }
     public void ChangeMain3Invoke()
     {
         PlaySE();
         Time.timeScale = 1;
-        Invoke("ChangeMain3", 0.3f);
+        Invoke("ChangeMain3", time);
     }
-    public void ChangeMain4()
+    //Main4シーン移動
+    private void ChangeMain4()
     {
-        SceneManager.LoadScene("Main4");
+        ChangeScene("Main4");
     }
     public void ChangeMain4Invoke()
     {
         PlaySE();
         Time.timeScale = 1;
-        Invoke("ChangeMain4", 0.3f);
+        Invoke("ChangeMain4", time);
     }
-    public void ChangeSelect()
+    //SelectStageシーン移動
+    private void ChangeSelect()
     {
         ReadyManager.ResetReady();
-        SceneManager.LoadScene("SelectStage");
+        ChangeScene("SelectStage");
     }
     public void ChangeSelectInvoke()
     {
         PlaySE();
         Time.timeScale = 1;
-        Invoke("ChangeSelect", 0.3f);
+        Invoke("ChangeSelect", time);
     }
-    //Title�V�[���Ɉړ�
-    public void ChangeTitle()
+    //Titleシーン移動
+    private void ChangeTitle()
     {
-        SceneManager.LoadScene("Title");
+        ChangeScene("Title");
     }
     public void ChangeTitleInvoke()
     {
         PlaySE();
         Time.timeScale = 1;
-        Invoke("ChangeTitle", 0.3f);
+        Invoke("ChangeTitle", time);
     }
-    //Clear�V�[���Ɉړ�
-    public void ChangeClear()
+    //Clearシーン移動
+    private void ChangeClear()
     {
-        SceneManager.LoadScene("Clear");
+        ChangeScene("Clear");
     }
     public void ChangeClearInvoke()
     {
         PlaySE();
         Time.timeScale = 1;
-        Invoke("ChangeClear", 0.3f);
+        Invoke("ChangeClear", time);
     }
     public void QuitGame()
     {
         Application.Quit();
     }
-
+    //SE鳴らす処理
     private void PlaySE() 
     { 
         if (sound != null)
@@ -102,7 +112,7 @@ public class Scene : MonoBehaviour
             sound.PlayButton();
         } 
     }
-
+    //ゲーム終了ボタン表示処理
     public void Announce()
     {
         if(!quit)
