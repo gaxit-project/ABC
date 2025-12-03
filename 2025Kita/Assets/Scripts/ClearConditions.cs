@@ -9,12 +9,6 @@ public class ClearConditions : MonoBehaviour
     public int clearCondition = 1;  // クリアするために必要な条件
     public static int clearFlag = 0;    
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

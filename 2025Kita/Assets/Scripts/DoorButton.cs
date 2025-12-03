@@ -54,12 +54,20 @@ public class DoorButton : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 接触した時の処理
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
        isPlayerTouching = true; 
        GetComponent<Renderer>().material.color = Color.green;
     }
 
+    /// <summary>
+    /// 接触が外れた時の処理
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerExit(Collider other)
     {
         isPlayerTouching = false; 
