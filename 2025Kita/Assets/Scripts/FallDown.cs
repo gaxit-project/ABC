@@ -7,7 +7,7 @@ public class FallDown : MonoBehaviour
     public GameObject pushObject;   // このオブジェクトを押すことができるオブジェクト
     Rigidbody rb;
     int force = 50;
-    private float waitseconds = 5f;
+    [SerializeField ]private float waitseconds = 5f;
     public bool isFalled = false;
 
     // Start is called before the first frame update

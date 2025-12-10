@@ -12,6 +12,11 @@ public class Sound : MonoBehaviour
         audiosource.PlayOneShot(audioClip);
     }
 
+    public void PlayBreak()
+    {
+        audiosource.PlayOneShot(audioClip);
+    }
+
     public void PlayButton()
     {
         audiosource.PlayOneShot(audioClip);

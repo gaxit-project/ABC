@@ -7,6 +7,9 @@ public class BreakBridge : MonoBehaviour
     [SerializeField] private GameObject breaker;
     [SerializeField] private ParticleSystem breakerParticle;
     [SerializeField] private FallDown FD;
+    [SerializeField] Sound sound;
+
+
 
     public void OnCollisionEnter(Collision collision)
     {
@@ -17,6 +20,7 @@ public class BreakBridge : MonoBehaviour
             {
                 this.gameObject.SetActive(false);
                 breakerParticle.Play();
+                sound.PlayBreak();
             }
         }
     }

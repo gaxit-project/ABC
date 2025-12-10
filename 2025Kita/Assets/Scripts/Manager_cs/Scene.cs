@@ -66,6 +66,17 @@ public class Scene : MonoBehaviour
         Time.timeScale = 1;
         Invoke("ChangeMain4", time);
     }
+    //Main5シーン移動
+    private void ChangeMain5()
+    {
+        ChangeScene("Main5");
+    }
+    public void ChangeMain5Invoke()
+    {
+        PlaySE();
+        Time.timeScale = 1;
+        Invoke("ChangeMain5", time);
+    }
     //SelectStageシーン移動
     private void ChangeSelect()
     {
