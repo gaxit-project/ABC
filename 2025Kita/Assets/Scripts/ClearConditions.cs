@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 public class ClearConditions : MonoBehaviour
 {
     public int clearCondition = 1;  // クリアするために必要な条件
-    public static int clearFlag = 0;    
+    public static int clearFlag = 0;
+
+    private void Start()
+    {
+        clearFlag = 0; // フラグを初期化
+    }
 
     // Update is called once per frame
     void Update()
