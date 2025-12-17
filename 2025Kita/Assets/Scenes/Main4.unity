@@ -335,7 +335,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 1
   m_Range: 7
   m_SpotAngle: 50
   m_InnerSpotAngle: 1
@@ -1949,7 +1949,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 1
   m_Range: 7
   m_SpotAngle: 50
   m_InnerSpotAngle: 1
@@ -7173,7 +7173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushObject: {fileID: 1992436778}
-  waitseconds: 5
+  waitseconds: 3.5
   isFalled: 0
 --- !u!54 &1169718745
 Rigidbody:
