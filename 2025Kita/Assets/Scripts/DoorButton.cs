@@ -10,9 +10,12 @@ public class DoorButton : MonoBehaviour
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
 
+    public GameObject scaffold; // 出現する足場
+
     void Start()
     {
         startY = transform.position.y;  // 初期位置を保存
+        scaffold.SetActive(false);
     }
 
     void Update()
@@ -62,6 +65,7 @@ public class DoorButton : MonoBehaviour
     {
        isPlayerTouching = true; 
        GetComponent<Renderer>().material.color = Color.green;
+       scaffold.SetActive(true);
     }
 
     /// <summary>
@@ -72,5 +76,6 @@ public class DoorButton : MonoBehaviour
     {
         isPlayerTouching = false; 
         GetComponent<Renderer>().material.color = Color.white; 
+        scaffold.SetActive(false);
     }
 }
