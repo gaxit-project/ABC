@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 6353880778272175815}
   - component: {fileID: 592601280018143348}
   - component: {fileID: 4635014022925719601}
-  - component: {fileID: 1096356826541116627}
   - component: {fileID: 5624705869867106640}
   m_Layer: 0
   m_Name: butoon
@@ -139,21 +138,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1096356826541116627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925422975726924399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9109776ad582c04db8dd92564cdc037, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bottomY: 2
-  speed: 0.5
-  door: {fileID: 0}
 --- !u!135 &5624705869867106640
 SphereCollider:
   m_ObjectHideFlags: 0
