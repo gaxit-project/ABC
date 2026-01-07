@@ -6,7 +6,7 @@ using UnityEngine;
 public class BrittleFloor : MonoBehaviour
 {
     [SerializeField] private PlayerStatus PS;
-    [SerializeField] private float brokenHeight = 3.0f;
+    //[SerializeField] private float brokenHeight = 3.0f;
     [SerializeField] private GameObject breaker;
     [SerializeField] private ParticleSystem breakerParticle;
     [SerializeField] Sound sound;
@@ -18,9 +18,12 @@ public class BrittleFloor : MonoBehaviour
         {
             if (collision.gameObject == breaker)
             {
-                this.gameObject.SetActive(false);
-                breakerParticle.Play();
-                sound.PlayBreak();
+                if(PS.hardLanding)
+                {
+                    this.gameObject.SetActive(false);
+                    breakerParticle.Play();
+                    sound.PlayBreak();
+                }
             }
         }
     }

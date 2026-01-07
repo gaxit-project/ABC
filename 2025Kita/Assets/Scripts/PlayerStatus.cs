@@ -12,8 +12,8 @@ public class PlayerStatus : MonoBehaviour
     private bool isFall;                                     //　落ちているかどうか
     public float fallenDistance;                            //　落下距離
     [SerializeField] public float takeDamageDistance = 2f;   //　どのぐらいの高さからダメージを与えるか
-    [SerializeField] private float limitDistance;
-    [SerializeField] private GameObject brittle;
+    public bool hardLanding { get; private set; } 
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +30,12 @@ public class PlayerStatus : MonoBehaviour
 
         if (isFall)
         {
-            fallenPosition = Mathf.Max(fallenPosition, transform.position.y);   
+            //fallenPosition = Mathf.Max(fallenPosition, transform.position.y);   
 
             if (Physics.Linecast(rayPosition.position, rayPosition.position + Vector3.down * rayRange, LayerMask.GetMask("Field"))) //　着地したか判断
             {
                 fallenDistance = fallenPosition - transform.position.y; //　落下距離を計算
-                
+
                 // 落下距離と与えるダメージ
                 /*if (fallenDistance >= takeDamageDistance)
                 {
@@ -43,19 +43,12 @@ public class PlayerStatus : MonoBehaviour
 
                     Debug.LogFormat("ダメージ" + (int)((fallenDistance - takeDamageDistance) * 200) + "残りHP" + HP);
                 }*/
+                hardLanding = fallenDistance >= takeDamageDistance;
                 isFall = false;
+                Debug.Log($"着地 落下距離={fallenDistance} hardLanding={hardLanding}");
             }
 
-            if (Physics.Linecast(rayPosition.position, rayPosition.position + Vector3.down * rayRange, LayerMask.GetMask("Brittle"))) //　着地したか判断
-            {
-                fallenDistance = fallenPosition - transform.position.y; //　落下距離を計算
-                if(fallenDistance > limitDistance)
-                {
-                    brittle.SetActive(false);
-                }
-                
-                isFall = false;
-            }
+            
         }
         else
         {
@@ -63,6 +56,7 @@ public class PlayerStatus : MonoBehaviour
             {
                 fallenPosition = transform.position.y; //　最初の落下地点を設定
                 fallenDistance = 0;
+                hardLanding = false;
                 isFall = true;
             }
         }
