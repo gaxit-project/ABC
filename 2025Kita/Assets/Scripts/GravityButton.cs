@@ -33,7 +33,7 @@ public class GravityButton : MonoBehaviour
             // ボタンが完全に沈んでいる（目標位置にある）場合のみドアを開ける
             if (transform.position.y <= bottomY)
             {
-                GC.SetLowGravity();
+                //GC.SetLowGravity();
             }
         }
         else // 触れていなければ元の位置に戻る
@@ -50,7 +50,7 @@ public class GravityButton : MonoBehaviour
 
             if (transform.position.y >= startY)
             {
-                GC.SetNormalGravity();
+                //GC.SetNormalGravity();
             }
         }
     }
@@ -61,12 +61,14 @@ public class GravityButton : MonoBehaviour
         {
             isPlayerTouching = true;
             GetComponent<Renderer>().material.color = Color.green;
+            GC.PressButton();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-            isPlayerTouching = false;
-            GetComponent<Renderer>().material.color = Color.white;
+        isPlayerTouching = false;
+        GetComponent<Renderer>().material.color = Color.white;
+        GC.ReleaseButton();
     }
 }

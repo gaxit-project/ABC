@@ -10,7 +10,7 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField] private float rayRange = 0.85f;         //　レイを飛ばす距離
     private float fallenPosition;                            //　落ちた場所
     private bool isFall;                                     //　落ちているかどうか
-    private float fallenDistance;                            //　落下距離
+    public float fallenDistance;                            //　落下距離
     [SerializeField] public float takeDamageDistance = 2f;   //　どのぐらいの高さからダメージを与えるか
 
     // Start is called before the first frame update

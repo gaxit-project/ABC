@@ -1,37 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class ElevateFloor : MonoBehaviour
+public class BrittleFloor : MonoBehaviour
 {
-    private Transform normalTransform;
-    [SerializeField] private Transform lowTransform;
-    [SerializeField] private GravityControl gravity;
-    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private PlayerStatus PS;
+    [SerializeField] private float brokenHeight = 3.0f;
+    [SerializeField] private GameObject breaker;
+    [SerializeField] private ParticleSystem breakerParticle;
+    [SerializeField] Sound sound;
 
-    private Vector3 targetPosition;
-    void Start()
+
+    public void OnCollisionEnter(Collision collision)
     {
-        normalTransform.position = targetPosition;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(gravity.normalGravity)
+        if (breaker != null && breakerParticle != null)
         {
-            targetPosition = normalTransform.position;
+            if (collision.gameObject == breaker)
+            {
+                this.gameObject.SetActive(false);
+                breakerParticle.Play();
+                sound.PlayBreak();
+            }
         }
-        else if(gravity.lowGravity)
-        {
-            targetPosition = lowTransform.position;
-        }
-
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            targetPosition,
-            moveSpeed * Time.deltaTime
-        );
-
     }
 }
