@@ -11,17 +11,20 @@ public class BreakBridge : MonoBehaviour
 
 
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionStay(Collision collision)
     {
         if (!FD.isFalled) return;
         if(breaker != null && breakerParticle != null)
         {
             if(collision.gameObject == breaker)
             {
+
                 this.gameObject.SetActive(false);
                 breakerParticle.Play();
                 sound.PlayBreak();
             }
         }
     }
+
+    //public IEnumerator 
 }

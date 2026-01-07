@@ -12,6 +12,8 @@ public class PlayerStatus : MonoBehaviour
     private bool isFall;                                     //　落ちているかどうか
     private float fallenDistance;                            //　落下距離
     [SerializeField] public float takeDamageDistance = 2f;   //　どのぐらいの高さからダメージを与えるか
+    [SerializeField] private float limitDistance;
+    [SerializeField] private GameObject brittle;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,17 @@ public class PlayerStatus : MonoBehaviour
 
                     Debug.LogFormat("ダメージ" + (int)((fallenDistance - takeDamageDistance) * 200) + "残りHP" + HP);
                 }*/
+                isFall = false;
+            }
+
+            if (Physics.Linecast(rayPosition.position, rayPosition.position + Vector3.down * rayRange, LayerMask.GetMask("Brittle"))) //　着地したか判断
+            {
+                fallenDistance = fallenPosition - transform.position.y; //　落下距離を計算
+                if(fallenDistance > limitDistance)
+                {
+                    brittle.SetActive(false);
+                }
+                
                 isFall = false;
             }
         }
