@@ -21,4 +21,9 @@ public class Sound : MonoBehaviour
     {
         audiosource.PlayOneShot(audioClip);
     }
+
+    public void PlayMove()
+    {
+        audiosource.PlayOneShot(audioClip);
+    }
 }

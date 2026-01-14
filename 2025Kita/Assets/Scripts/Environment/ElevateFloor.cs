@@ -8,8 +8,11 @@ public class ElevateFloor : MonoBehaviour
     [SerializeField] private Transform lowTransform;
     [SerializeField] private GravityControl gravity;
     [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private Sound sound;
 
     private Vector3 targetPosition;
+    private bool isMoving;
+    private bool wasMoving;
     void Start()
     {
         targetPosition = normalTransform.position;
@@ -34,6 +37,14 @@ public class ElevateFloor : MonoBehaviour
             moveSpeed * Time.deltaTime
         );
 
+        wasMoving = isMoving;
+
+        isMoving = Vector3.Distance(transform.position, targetPosition) > 0.001f;
+
+        if (!wasMoving && isMoving)
+        {
+            sound.PlayMove();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
