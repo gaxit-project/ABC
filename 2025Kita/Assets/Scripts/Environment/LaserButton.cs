@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityButton : MonoBehaviour
+public class LaserButton : MonoBehaviour
 {
     public float bottomY = -0.01f;   // ボタンの沈む最大座標
     public float speed = 0.1f;  // ボタンの移動速度
-    [SerializeField] private GravityControl GC;
+    [SerializeField] private GameObject laser;
+    [SerializeField] private FloorMove2[] floorMove;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
@@ -33,10 +34,14 @@ public class GravityButton : MonoBehaviour
             // ボタンが完全に沈んでいる（目標位置にある）場合のみドアを開ける
             if (transform.position.y <= bottomY)
             {
-                //GC.PressButton();
+                DeleteLaser();
+                for(int i = 0; i < floorMove.Length; i++)
+                {
+                    floorMove[i].enabled = true;
+                }
             }
         }
-        else // 触れていなければ元の位置に戻る
+        /*else // 触れていなければ元の位置に戻る
         {
             if (transform.position.y < startY)
             {
@@ -52,7 +57,7 @@ public class GravityButton : MonoBehaviour
             {
                 //GC.ReleaseButton();
             }
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,14 +66,17 @@ public class GravityButton : MonoBehaviour
         {
             isPlayerTouching = true;
             GetComponent<Renderer>().material.color = Color.green;
-            GC.PressButton();
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
         isPlayerTouching = false;
         GetComponent<Renderer>().material.color = Color.white;
-        GC.ReleaseButton();
+    }*/
+
+    public void DeleteLaser()
+    {
+        laser.SetActive(false);
     }
 }

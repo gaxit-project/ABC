@@ -37,4 +37,5 @@ public class LaserControl : MonoBehaviour
             yield return new WaitForSeconds(interval); // w’è•b”‘Ò‹@
         }
     }
+
 }

@@ -108,12 +108,17 @@ public class PlayerMovement : MonoBehaviour
             ClearConditions.clearFlag++;
             
         }
+        if (other.gameObject.tag == "Death")
+        {
+            status.HP = 0;
+        }
 
         /*if(other.gameObject.CompareTag("ChangeEgg"))
         {
             OnEggCollided?.Invoke(other.gameObject);
         }*/
     }
+
 
     public void SetMoveStop(bool isStopped)
     {

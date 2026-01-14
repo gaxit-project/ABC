@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GravityControl : MonoBehaviour
 {
     [SerializeField] private float lowGravityPower = -5.0f;
     [SerializeField] private float normalGravityPower = -9.81f;
+    [SerializeField] private Image image;
 
     private int buttonCount = 0;
     public bool normalGravity => buttonCount == 0;
@@ -14,12 +16,14 @@ public class GravityControl : MonoBehaviour
     private void SetLowGravity()
     {
         Physics.gravity = new Vector3(0, lowGravityPower, 0);
+        image.enabled = true;
 
     }
 
     private void SetNormalGravity()
     {
         Physics.gravity = new Vector3(0, normalGravityPower, 0);
+        image.enabled = false;
 
     }
 
