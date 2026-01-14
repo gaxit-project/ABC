@@ -20,7 +20,7 @@ public class CameraChange : MonoBehaviour
     {
         int startIndex = Mathf.Clamp(EggSelect, 0, targetScripts.Length - 1);
 
-        if(targetScripts.Length > startIndex)
+        if (targetScripts.Length > startIndex)
         {
             currentScript = targetScripts[startIndex];
         }
@@ -30,7 +30,7 @@ public class CameraChange : MonoBehaviour
             CinemachineVirtualCamera vcam = cameras[i].GetComponent<CinemachineVirtualCamera>();
 
             if (vcam != null)
-            { 
+            {
                 vcam.Priority = (i == startIndex) ? 15 : 5;
             }
 
@@ -46,14 +46,36 @@ public class CameraChange : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// コントローラー切り替え
+    /// </summary>
+    public void quail()
+    {
+        EggChange(2);
+    }
+
+    public void chicken()
+    {
+        EggChange(0);
+    }
+
+    public void ostrich()
+    {
+        EggChange(1);
+    }
+
+    /// <summary>
+    /// キーボード切り替え
+    /// </summary>
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            EggSelect = (EggSelect+1) % targetScripts.Length;
+            EggSelect = (EggSelect + 1) % targetScripts.Length;
             EggChange(EggSelect);
         }
     }
+
     private void SubscribeToPlayerCollision(PlayerMovement player)
     {
         player.OnEggCollided += HandleCollisionFromChild;
@@ -98,17 +120,17 @@ public class CameraChange : MonoBehaviour
             }
             currentScript.SetMoveStop(false);
             SubscribeToPlayerCollision(currentScript);
-         }
+        }
     }
-    
+
 
     private void HandleCollisionFromChild(GameObject collodedObject)
     {
-        if(collodedObject != null)
+        if (collodedObject != null)
         {
             collodedObject.SetActive(false);
         }
         EggSelect = (EggSelect + 1) % targetScripts.Length;
-        EggChange(EggSelect);        
+        EggChange(EggSelect);
     }
 }
