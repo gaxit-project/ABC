@@ -9,7 +9,7 @@ public class StageCamera : MonoBehaviour
     [SerializeField] private Transform[] points;
     [SerializeField] private float moveSpeed = 1f;  //カメラの移動スピード
     [SerializeField] private float rotationSpeed = 3f;  //カメラの向きが変わる速さ
-    [SerializeField] GameObject[] playerCamera;
+    [SerializeField] GameObject playerCamera;
 
     public bool skip = false;
 
@@ -23,11 +23,7 @@ public class StageCamera : MonoBehaviour
             yield break;
 
 
-        for(int i = 0; i < playerCamera.Length; i++)
-        {
-            playerCamera[i].SetActive(false);
-        }
-        
+        playerCamera.SetActive(false);
 
         Time.timeScale = 0;
 
@@ -70,10 +66,7 @@ public class StageCamera : MonoBehaviour
 
         Time.timeScale = 1;
 
-        for(int i = 0; i < playerCamera.Length; i++)
-        {
-            playerCamera[i].SetActive(true);
-        }
+        playerCamera.SetActive(true);
         gameObject.SetActive(false);
     }
 
