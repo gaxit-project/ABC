@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveForce = 5f;    // 移動するための力の強さ
     public float jumpPower = 200f;  // ジャンプ力
+    public float rate = 0.3f;
 
     float moveHorizontal;           // 水平方向
     float moveVertical;             // 垂直方向
@@ -62,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")) && !isJumping)
         {
-            rb.velocity = new Vector3(rb.velocity.x, jumpPower, rb.velocity.z);  // ジャンプ
+            rb.velocity = new Vector3(rb.velocity.x, jumpPower, rb.velocity.z*rate);  // ジャンプ
             isJumping = true;
         }
 
