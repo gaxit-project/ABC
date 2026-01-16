@@ -738,7 +738,8 @@ MonoBehaviour:
   - {fileID: 1600722074}
   moveSpeed: 8
   rotationSpeed: 3
-  playerCamera: {fileID: 1741367392}
+  playerCamera:
+  - {fileID: 1741367392}
   skip: 0
 --- !u!114 &616458933
 MonoBehaviour:
@@ -4195,6 +4196,14 @@ PrefabInstance:
     - target: {fileID: 5895578189938069962, guid: 30e204e1eba149e47a8a0569d685279b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050522161090044894, guid: 30e204e1eba149e47a8a0569d685279b, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 92937290a3200dd45827ad587130cc2b, type: 3}
+    - target: {fileID: 9050522161090044894, guid: 30e204e1eba149e47a8a0569d685279b, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
