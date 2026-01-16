@@ -20,12 +20,13 @@ public class ReadyManager : MonoBehaviour
             text.text = "";
             isReady = false;
             Time.timeScale = 1f;
+            sc.gameObject.SetActive(false);
             if(player != null)
             {
                 player.ready = true;
             }
         }
-        else
+        else if(!reload)
         {
             if (sc != null)
             {
