@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -240,6 +240,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 728401226}
     - target: {fileID: 6914495257670963357, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
+      propertyPath: egg
+      value: 
+      objectReference: {fileID: 6042943}
+    - target: {fileID: 6914495257670963357, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       propertyPath: pause
       value: 
       objectReference: {fileID: 1819286012}
@@ -247,6 +251,10 @@ PrefabInstance:
       propertyPath: friedEgg
       value: 
       objectReference: {fileID: 1033983340}
+    - target: {fileID: 6914495257670963357, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
+      propertyPath: crackedEgg
+      value: 
+      objectReference: {fileID: 1062617596}
     - target: {fileID: 7399500536100992566, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.02319336
@@ -1657,6 +1665,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1062617596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 344310252513513395, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
+  m_PrefabInstance: {fileID: 6042942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1071293434
 PrefabInstance:
   m_ObjectHideFlags: 0
