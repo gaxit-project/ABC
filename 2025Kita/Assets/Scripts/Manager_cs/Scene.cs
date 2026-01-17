@@ -126,6 +126,16 @@ public class Scene : MonoBehaviour
     {
         Application.Quit();
     }
+    public void ReStart()
+    {
+        PlaySE();
+        Time.timeScale = 1;
+        Invoke(nameof(SceneChange), time);
+    }
+    private void SceneChange()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // ロードする
+    }
     //SE鳴らす処理
     private void PlaySE() 
     { 
