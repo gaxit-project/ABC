@@ -58,7 +58,7 @@ public class Scene : MonoBehaviour
     //Main4シーン移動
     private void ChangeMain4()
     {
-        ChangeScene("Garden");
+        ChangeScene("Main4");
     }
     public void ChangeMain4Invoke()
     {
