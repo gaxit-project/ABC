@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45046282, g: 0.50046486, b: 0.57517725, a: 1}
+  m_IndirectSpecularColor: {r: 0.4504627, g: 0.5004645, b: 0.57517666, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -843,7 +843,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61098020}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7875,7 +7875,7 @@ Transform:
   m_GameObject: {fileID: 156683952}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9914449, z: -0.13052616, w: 0}
-  m_LocalPosition: {x: 0.010426998, y: 4.0436883, z: 10.004755}
+  m_LocalPosition: {x: 0.0104269385, y: 4.0436883, z: 10.004754}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8220,7 +8220,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 174214248}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -13431,7 +13431,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665578832}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -14759,7 +14759,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805021615}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -15552,7 +15552,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898582493}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -30435,15 +30435,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4502340539372746215, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: HP
-      value: 500
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4502340539372746215, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: rayRange
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4502340539372746215, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: fallenDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502340539372746215, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: takeDamageDistance
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4549604806079505809, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_IsActive
@@ -30575,15 +30579,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2209997
+      value: -1.2210002
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.610268
+      value: 6.610267
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.207571
+      value: -17.20757
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30675,7 +30679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6758309459070077243, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17492151
+      value: 0.17492247
       objectReference: {fileID: 0}
     - target: {fileID: 6758309459070077243, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30683,7 +30687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6758309459070077243, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.894331
+      value: 29.894333
       objectReference: {fileID: 0}
     - target: {fileID: 6758309459070077243, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30845,6 +30849,10 @@ PrefabInstance:
       propertyPath: deceleration
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7354780092527616569, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
     - target: {fileID: 7403354396564482729, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: rm
       value: 
@@ -30873,6 +30881,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8431836461796509469, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
+    - target: {fileID: 8601671167709571777, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
     - target: {fileID: 8604345528404435874, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -31228,7 +31244,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111049482}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b2b19cd1a614dbe4a8a252910f6659a9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -30,19 +30,19 @@ public class PlayerStatus : MonoBehaviour
 
         if (isFall)
         {
-            //fallenPosition = Mathf.Max(fallenPosition, transform.position.y);   
+            fallenPosition = Mathf.Max(fallenPosition, transform.position.y);   
 
             if (Physics.Linecast(rayPosition.position, rayPosition.position + Vector3.down * rayRange, LayerMask.GetMask("Field"))) //　着地したか判断
             {
                 fallenDistance = fallenPosition - transform.position.y; //　落下距離を計算
 
                 // 落下距離と与えるダメージ
-                /*if (fallenDistance >= takeDamageDistance)
+                if (fallenDistance >= takeDamageDistance)
                 {
                     HP -= (int)((fallenDistance - takeDamageDistance) * 100);
 
                     Debug.LogFormat("ダメージ" + (int)((fallenDistance - takeDamageDistance) * 200) + "残りHP" + HP);
-                }*/
+                }
                 hardLanding = fallenDistance >= takeDamageDistance;
                 isFall = false;
                 Debug.Log($"着地 落下距離={fallenDistance} hardLanding={hardLanding}");
