@@ -7274,7 +7274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc9ecc5b75189f448a4d78db532e850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 0}
+  killEgg: {fileID: 1571025232}
+  sound: {fileID: 977299035}
   topY: 3
   bottomY: 1.6
   fallSpeed: 12

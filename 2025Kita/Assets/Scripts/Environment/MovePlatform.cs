@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    [SerializeField] private GameObject killEgg;
     [SerializeField] Sound sound;
 
     public float topY = 2f;
@@ -17,6 +18,7 @@ public class MovingPlatform : MonoBehaviour
 
     private float currentSpeed = 0f;
     private bool goingDown = true;
+    private bool pressing = false;
 
     private Rigidbody rb;
 
@@ -26,6 +28,11 @@ public class MovingPlatform : MonoBehaviour
         //rb.isKinematic = false;  // Kinematic ‚Å‚È‚­‚Ä‚à MovePosition ‚Í‰Â
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         sound = GetComponent<Sound>();
+    }
+
+    private void Update()
+    {
+        
     }
 
     void FixedUpdate()
@@ -48,12 +55,29 @@ public class MovingPlatform : MonoBehaviour
             goingDown = false;
             currentSpeed = 0;
             sound.PlayStamp();
+            StartCoroutine(Press());
         }
         else if (!goingDown && rb.position.y >= topY)
         {
             goingDown = true;
+            pressing = true;
             currentSpeed = 0;
         }
+
+        if (pressing)
+        {
+            killEgg.SetActive(true);
+        }
+        else if (!pressing)
+        {
+            killEgg.SetActive(false);
+        }
+    }
+
+    IEnumerator Press()
+    {
+        yield return new WaitForSeconds(0.5f);
+        pressing = false;
     }
 }
 
