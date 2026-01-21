@@ -8,6 +8,8 @@ public class StopPressMachine2 : MonoBehaviour
     public bool isStop = false;
     private bool wasStop = false;
 
+    [SerializeField] private MovingPlatform platform;
+
     private Rigidbody rb;
     private void Start()
     {
@@ -18,13 +20,23 @@ public class StopPressMachine2 : MonoBehaviour
     {
         if (isStop && !wasStop)
         {
-            StartCoroutine(DisableAnimatorAfterTransition(0.01f));
+            if (platform != null)
+            {
+                platform.transform.position = new Vector3(
+                    platform.transform.position.x,
+                    platform.topY,
+                    platform.transform.position.z
+                );
+                platform.enabled = false;
+            }
             wasStop = true;
         }
         else if (!isStop && wasStop)
         {
-            rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
-            rb.isKinematic = true;
+            if (platform != null)
+            {
+                platform.enabled = true; 
+            }
             wasStop = false;
         }
     }
