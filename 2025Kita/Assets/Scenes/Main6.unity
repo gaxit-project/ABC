@@ -1300,6 +1300,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 956499272222287447, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: HP
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 956499272222287447, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: rayRange
       value: 3
       objectReference: {fileID: 0}

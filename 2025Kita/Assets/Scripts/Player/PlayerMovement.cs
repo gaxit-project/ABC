@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isStopMovement = false;   // 動きを止めるかどうかのフラグ
     public bool isGoal = false;
 
-    [SerializeField] public GameObject egg;         // 割れる前のオブジェクト
     [SerializeField] public GameObject crackedEgg;  // 割れた後のオブジェクト
 
     PlayerStatus status;
@@ -107,9 +106,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Goal"))
         {
             this.gameObject.SetActive(false);
-            egg.SetActive(false);
             crackedEgg.SetActive(true);
-            crackedEgg.transform.position = egg.transform.position;
+            crackedEgg.transform.position = this.gameObject.transform.position;
             friedEgg.SetActive(true);
             audioSource.Play();
             ClearConditions.clearFlag++;
