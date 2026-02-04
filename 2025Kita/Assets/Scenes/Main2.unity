@@ -366,6 +366,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 966116440349906508, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       insertIndex: -1
       addedObject: {fileID: 272690919}
+    - targetCorrespondingSourceObject: {fileID: 966116440349906508, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 272690921}
+    - targetCorrespondingSourceObject: {fileID: 966116440349906508, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 272690927}
     - targetCorrespondingSourceObject: {fileID: 1703575308630672522, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1845973018}
@@ -761,6 +767,120 @@ MonoBehaviour:
   pauseMenu: {fileID: 0}
   rm: {fileID: 0}
   isPaused: 0
+--- !u!114 &272690921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdeac385eafefdb4294fb5f07c86366f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollSource: {fileID: 272690927}
+  landSource: {fileID: 272690927}
+  groundSettings:
+  - groundTag: Metal
+    land: {fileID: 8300000, guid: dc794998328823d418ee3e83adeb49f1, type: 3}
+    roll: {fileID: 8300000, guid: 68692f0e68d1c0e4f8abfd88ae9823e2, type: 3}
+--- !u!82 &272690927
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042943}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: dc794998328823d418ee3e83adeb49f1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &298322213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6551197552056570177, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
@@ -1125,7 +1245,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515004318}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &515004325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2728,6 +2848,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2937913615331351687, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 2963782766766884571, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -2775,6 +2899,10 @@ PrefabInstance:
     - target: {fileID: 3679634623233224768, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679634623233224768, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 3732350132487205377, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_IsTrigger
@@ -2888,6 +3016,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5210604142820858279, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 5232068654048691211, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_TagString
       value: Death
@@ -2935,6 +3067,10 @@ PrefabInstance:
     - target: {fileID: 5685394833499980731, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5685394833499980731, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 5722103649828418616, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_TagString
@@ -2999,6 +3135,10 @@ PrefabInstance:
     - target: {fileID: 6386682796307157231, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6386682796307157231, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 6443560493373440571, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_IsActive
@@ -3084,6 +3224,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7518611809660507444, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 7539757230390141163, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_TagString
       value: Death
@@ -3156,6 +3300,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8025156613732095343, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 8048026185378099641, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_Material
       value: 
@@ -3215,6 +3363,10 @@ PrefabInstance:
     - target: {fileID: 8598148398218758372, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8598148398218758372, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 8609346379457144507, guid: 222bf4adb1ca2a242abb0cc7b36336ea, type: 3}
       propertyPath: m_IsTrigger
@@ -3645,7 +3797,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363157053}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1363157059
 Camera:
   m_ObjectHideFlags: 0
@@ -5187,7 +5339,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135023232}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &2135023235
 Camera:
   m_ObjectHideFlags: 0

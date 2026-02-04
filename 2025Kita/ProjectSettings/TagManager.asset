@@ -9,6 +9,8 @@ TagManager:
   - ChangeEgg
   - Death
   - Grass
+  - Metal
+  - Concrete
   layers:
   - Default
   - TransparentFX

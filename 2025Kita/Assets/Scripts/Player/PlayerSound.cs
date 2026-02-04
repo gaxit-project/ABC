@@ -45,7 +45,7 @@ public class PlayerSound : MonoBehaviour
         GroundSetting setting = FindSetting(collision.gameObject.tag);
         float speed = rb.velocity.magnitude;
 
-        rollSource.volume = speed > 0.1f ? Mathf.Clamp(speed / 10f, 0, 0.5f) : 0;
+        rollSource.volume = speed > 0.1f ? Mathf.Clamp(speed / 2f, 0, 0.8f) : 0;
 
         if (setting != null && setting.roll != null)
         {
