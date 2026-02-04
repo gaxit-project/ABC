@@ -10,10 +10,12 @@ using Cinemachine;
 public class CameraChange : MonoBehaviour
 {
     public GameObject[] cameras;            // 使用するカメラ
+    public GameObject[] farCameras;      // 引きに使用するカメラ
     public GameObject mainCamera;           // 使用中カメラ
     public PlayerMovement[] targetScripts;  // プレイヤー移動を管理するスクリプト
     public PlayerMovement currentScript;   // 現在動いているプレイヤーのスクリプト
     private int EggSelect = 0;
+    private bool isFarView = false;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,14 @@ public class CameraChange : MonoBehaviour
             EggSelect = (EggSelect + 1) % targetScripts.Length;
             EggChange(EggSelect);
         }
+        if (Input.GetButton("FarCamera"))
+        {
+            ChangeCameraView(true);
+        }
+        else
+        {
+            ChangeCameraView(false);
+        }
     }
 
     private void SubscribeToPlayerCollision(PlayerMovement player)
@@ -92,6 +102,12 @@ public class CameraChange : MonoBehaviour
     /// <param name="num"></param>
     private void EggChange(int num)
     {
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameras[i].GetComponent<CinemachineVirtualCamera>().Priority = 5;
+            farCameras[i].GetComponent<CinemachineVirtualCamera>().Priority = 5;
+        }
+
         if (currentScript != null)
         {
             UnsubscribeFromPlayerCollision(currentScript);
@@ -120,6 +136,9 @@ public class CameraChange : MonoBehaviour
             }
             currentScript.SetMoveStop(false);
             SubscribeToPlayerCollision(currentScript);
+
+            cameras[num].GetComponent<CinemachineVirtualCamera>().Priority = 15;
+            isFarView = false;
         }
     }
 
@@ -132,5 +151,22 @@ public class CameraChange : MonoBehaviour
         }
         EggSelect = (EggSelect + 1) % targetScripts.Length;
         EggChange(EggSelect);
+    }
+
+    private void ChangeCameraView(bool far)
+    {
+        int index = Array.IndexOf(targetScripts, currentScript);
+        if (index < 0) return;
+
+        var normalVcam = cameras[index].GetComponent<CinemachineVirtualCamera>();
+        var farVcam = farCameras[index].GetComponent<CinemachineVirtualCamera>();
+
+        if (normalVcam != null)
+            normalVcam.Priority = far ? 5 : 15;
+
+        if (farVcam != null)
+            farVcam.Priority = far ? 15 : 5;
+
+        isFarView = far;
     }
 }
