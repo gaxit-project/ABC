@@ -47,4 +47,14 @@ public class StopPressMachine2 : MonoBehaviour
         rb.constraints = RigidbodyConstraints.FreezeAll;
         rb.isKinematic = false;
     }
+
+    public bool RtnisStop()
+    {
+        return isStop;
+    }
+    public bool RtnwasStop()
+    {
+        return wasStop;
+    }
+
 }

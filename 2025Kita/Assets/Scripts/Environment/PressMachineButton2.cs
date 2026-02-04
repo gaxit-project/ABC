@@ -8,9 +8,12 @@ public class PressMachineButton2 : MonoBehaviour
     public float bottomY = -0.01f;   // ボタンの沈む最大座標
     public float speed = 0.1f;  // ボタンの移動速度
     public StopPressMachine2 sPM;
+    [SerializeField] CameraMovie CM;
+    [SerializeField] GameObject Camera;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
+    private bool wasPush = false;
 
     void Start()
     {
@@ -35,6 +38,12 @@ public class PressMachineButton2 : MonoBehaviour
             if (transform.position.y <= bottomY)
             {
                 sPM.isStop = true; // プレス機を止める
+                if(!wasPush)
+                {
+                    Camera.gameObject.SetActive(true);
+                    StartCoroutine(CM.CameraScene());
+                }
+                wasPush = true;
             }
         }
         else // 触れていなければ元の位置に戻る
@@ -52,6 +61,7 @@ public class PressMachineButton2 : MonoBehaviour
             if (transform.position.y >= startY)
             {
                 sPM.isStop = false;
+                wasPush = false;
             }
         }
     }

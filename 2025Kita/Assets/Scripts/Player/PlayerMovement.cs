@@ -148,4 +148,14 @@ public class PlayerMovement : MonoBehaviour
             rb.constraints = RigidbodyConstraints.None;
         }
     }
+
+    public void StopPlayer()
+    {
+        isStopMovement = true;
+    }
+
+    public void MovePlayer()
+    {
+        isStopMovement = false;
+    }
 }

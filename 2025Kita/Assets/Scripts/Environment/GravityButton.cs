@@ -7,6 +7,8 @@ public class GravityButton : MonoBehaviour
     public float bottomY = -0.01f;   // ボタンの沈む最大座標
     public float speed = 0.1f;  // ボタンの移動速度
     [SerializeField] private GravityControl GC;
+    [SerializeField] CameraMovie2 CM;
+    [SerializeField] GameObject Camera;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
@@ -62,6 +64,8 @@ public class GravityButton : MonoBehaviour
             isPlayerTouching = true;
             GetComponent<Renderer>().material.color = Color.green;
             GC.PressButton();
+            Camera.gameObject.SetActive(true);
+            StartCoroutine(CM.CameraScene());
         }
     }
 
