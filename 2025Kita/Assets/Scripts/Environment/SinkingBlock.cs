@@ -23,6 +23,8 @@ public class SinkingBlock : MonoBehaviour
     [SerializeField]
     private Vector3 blockSize = Vector3.one;
 
+    public AudioSource audioSource;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
@@ -39,6 +41,7 @@ public class SinkingBlock : MonoBehaviour
             if (Physics.CheckBox(transform.position + Vector3.up * rayDistance, blockSize * 0.52f, Quaternion.identity, LayerMask.GetMask("Player")))
             {
                 velocity = Vector3.down * sinkingSpeed;
+                audioSource.Play();
                 characterIsOnBoard = true;
             }
             else
