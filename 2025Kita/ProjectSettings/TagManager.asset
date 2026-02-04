@@ -8,6 +8,7 @@ TagManager:
   - Goal
   - ChangeEgg
   - Death
+  - Grass
   layers:
   - Default
   - TransparentFX
