@@ -7,6 +7,7 @@ public class SwitchButton : MonoBehaviour
     public float bottomY = -0.01f;   // ボタンの沈む最大座標
     public float speed = 0.1f;  // ボタンの移動速度
     public bool isOn = false;
+    public GameObject disObject; // けすゲームオブジェクト
 
     void Update()
     {
@@ -33,5 +34,6 @@ public class SwitchButton : MonoBehaviour
     {
         isOn = true;
         GetComponent<Renderer>().material.color = Color.green;
+        disObject.SetActive(false);
     }
 }
