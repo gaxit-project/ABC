@@ -65,7 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump")) && !isJumping)
         {
-            rb.velocity = new Vector3(rb.velocity.x, jumpPower, rb.velocity.z*rate);  // ジャンプ
+            rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            //velocity = new Vector3(rb.velocity.x, jumpPower, rb.velocity.z*rate);  // ジャンプ
             isJumping = true;
         }
 

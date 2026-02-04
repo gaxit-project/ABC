@@ -427,6 +427,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77470084}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &154245102 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3698953117622397389, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
+  m_PrefabInstance: {fileID: 207061435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &154245104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154245102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b4cee151fac7c47a92dc4f96696527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionForce: 2
+  upForce: 1
 --- !u!4 &154733618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3894544855976595701, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
@@ -1179,6 +1198,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5724564940838757000, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       insertIndex: -1
       addedObject: {fileID: 207061440}
+    - targetCorrespondingSourceObject: {fileID: 3698953117622397389, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 154245104}
     - targetCorrespondingSourceObject: {fileID: 6150224761073584224, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1781522425}
@@ -1861,6 +1883,10 @@ PrefabInstance:
     - target: {fileID: 3680815405174844019, guid: 22220b673140be544822e9b4847276c9, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3771787451081022842, guid: 22220b673140be544822e9b4847276c9, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3771787451081022842, guid: 22220b673140be544822e9b4847276c9, type: 3}
       propertyPath: m_TagString
