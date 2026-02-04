@@ -11805,6 +11805,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReStart
       objectReference: {fileID: 0}
+    - target: {fileID: 2857922851155148439, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2865574183123170783, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11885,6 +11889,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4572085425672660834, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6740637428772087385, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11892,6 +11900,10 @@ PrefabInstance:
     - target: {fileID: 6740637428772087385, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeSelectInvoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605177063722642477, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
