@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4504627, g: 0.5004645, b: 0.57517666, a: 1}
+  m_IndirectSpecularColor: {r: 0.45046282, g: 0.50046486, b: 0.57517725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2459,8 +2459,77 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4666409030337894645, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 142848182}
+    - targetCorrespondingSourceObject: {fileID: 9049680021547743716, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 142848181}
+    - targetCorrespondingSourceObject: {fileID: 5457253609073072710, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 142848180}
   m_SourcePrefab: {fileID: 100100000, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+--- !u!1 &142848177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5457253609073072710, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+  m_PrefabInstance: {fileID: 142848176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &142848178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9049680021547743716, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+  m_PrefabInstance: {fileID: 142848176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &142848179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4666409030337894645, guid: 7e5a9b28c3a6db14f94aef6b6dc7118e, type: 3}
+  m_PrefabInstance: {fileID: 142848176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &142848180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142848177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &142848181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142848178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &142848182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142848179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!4 &143883453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 458416, guid: 71a819752bcd42b48968c6333ed0ec92, type: 3}
@@ -7858,7 +7927,7 @@ Transform:
   m_GameObject: {fileID: 156683952}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9914449, z: -0.13052616, w: 0}
-  m_LocalPosition: {x: 0.0104269385, y: 4.0436883, z: 10.004755}
+  m_LocalPosition: {x: 0.010426998, y: 4.0436883, z: 10.004756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9240,7 +9309,7 @@ Transform:
   m_GameObject: {fileID: 251839070}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7826082, z: -0.6225146, w: 0}
-  m_LocalPosition: {x: 0.0104269385, y: 16.821466, z: 5.5603113}
+  m_LocalPosition: {x: 0.010426998, y: 16.821468, z: 5.560312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33874,7 +33943,7 @@ Transform:
   m_GameObject: {fileID: 1573422351}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6225146, y: -0, z: -0, w: 0.7826082}
-  m_LocalPosition: {x: -1.2210002, y: 33.27693, z: -11.652015}
+  m_LocalPosition: {x: -1.2209997, y: 33.276936, z: -11.652017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34503,7 +34572,7 @@ Transform:
   m_GameObject: {fileID: 1625039250}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6225146, y: -0, z: -0, w: 0.7826082}
-  m_LocalPosition: {x: 0.17492247, y: 33.642185, z: 35.449886}
+  m_LocalPosition: {x: 0.17492151, y: 33.64219, z: 35.449886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39945,15 +40014,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2210002
+      value: -1.2209997
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.610267
+      value: 6.610268
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.20757
+      value: -17.207571
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalRotation.w
@@ -40045,7 +40114,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6758309459070077243, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17492247
+      value: 0.17492151
       objectReference: {fileID: 0}
     - target: {fileID: 6758309459070077243, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.y
