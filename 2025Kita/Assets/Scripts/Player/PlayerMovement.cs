@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public bool ready = true;       //ゲーム開始前かどうか
     public bool isStopMovement = false;   // 動きを止めるかどうかのフラグ
     public bool isGoal = false;
+    CameraChange cameraChange;
 
     [SerializeField] public GameObject crackedEgg;  // 割れた後のオブジェクト
 
@@ -112,7 +113,6 @@ public class PlayerMovement : MonoBehaviour
             friedEgg.SetActive(true);
             audioSource.Play();
             ClearConditions.clearFlag++;
-            
         }
         if (other.gameObject.tag == "Death")
         {
