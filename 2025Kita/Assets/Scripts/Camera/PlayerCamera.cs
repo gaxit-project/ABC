@@ -16,6 +16,7 @@ public class PlayerCamera : MonoBehaviour
 
     private void LateUpdate()
     {
+        
         gameObject.transform.position = playerObj.transform.position + offset;
         transform.position = playerObj.transform.position + offset;
     }

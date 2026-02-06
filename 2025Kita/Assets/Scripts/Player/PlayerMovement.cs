@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isStopMovement = false;   // 動きを止めるかどうかのフラグ
     public bool isGoal = false;
     CameraChange cameraChange;
+    public float maxspeed = 10f;
 
     [SerializeField] public GameObject crackedEgg;  // 割れた後のオブジェクト
 
@@ -89,6 +90,11 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(movement);  // 移動
 
+        if(rb.velocity.magnitude > maxspeed)
+        {
+            rb.velocity = rb.velocity.normalized * maxspeed;
+        }
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -118,11 +124,6 @@ public class PlayerMovement : MonoBehaviour
         {
             status.HP = 0;
         }
-
-        /*if(other.gameObject.CompareTag("ChangeEgg"))
-        {
-            OnEggCollided?.Invoke(other.gameObject);
-        }*/
     }
 
 
