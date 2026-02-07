@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
+using Cinemachine;
 
 public class SwitchButton : MonoBehaviour
 {
@@ -8,7 +10,10 @@ public class SwitchButton : MonoBehaviour
     public float speed = 0.1f;  // ボタンの移動速度
     public bool isOn = false;
     public GameObject disObject; // けすゲームオブジェクト
-
+    [SerializeField] CinemachineVirtualCamera sCamera;
+    public float switchTime = 3f;
+    private bool switchflag = false;
+   
     void Update()
     {
         if (isOn)
@@ -34,6 +39,19 @@ public class SwitchButton : MonoBehaviour
     {
         isOn = true;
         GetComponent<Renderer>().material.color = Color.green;
+        if(!switchflag)
+        {
+            StartCoroutine(Switch());
+        }
+    }
+
+    private IEnumerator Switch()
+    {
+        sCamera.Priority = 100;
+        yield return new WaitForSeconds(2);
         disObject.SetActive(false);
+        yield return new WaitForSeconds(2);
+        sCamera.Priority = 0;
+        switchflag = true;
     }
 }
