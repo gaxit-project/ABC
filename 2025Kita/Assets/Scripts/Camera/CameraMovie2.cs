@@ -6,29 +6,29 @@ public class CameraMovie2 : MonoBehaviour
 {
     [SerializeField] GameObject[] playerCamera;
     [SerializeField] PlayerMovement PM;
+    [SerializeField] private CameraChange CC;
     [SerializeField] float sceneTime = 4f;
 
     public IEnumerator CameraScene()
     {
         yield return null; // ï€åØÇ≈1ÉtÉåÅ[ÉÄë“ã@
-
+        PM.StopPlayer();
+        CC.StopChange();
         StartCoroutine(CameraScene1());
-
-        yield return new WaitForSeconds(0.01f);
-
-        StartCoroutine(CameraScene2());
+        yield return new WaitForSeconds(sceneTime);
+        PM.MovePlayer();
+        CC.MoveChange();
     }
 
     private IEnumerator CameraScene1()
     {
-        yield return null;
 
         for (int i = 0; i < playerCamera.Length; i++)
         {
             playerCamera[i].SetActive(false);
         }
 
-        PM.StopPlayer();
+        
 
         //yield return new WaitForSecondsRealtime(2f);
         yield return new WaitForSecondsRealtime(sceneTime);
@@ -41,12 +41,8 @@ public class CameraMovie2 : MonoBehaviour
         }
 
         this.gameObject.SetActive(false);
+        //yield return null;
     }
 
-    private IEnumerator CameraScene2()
-    {
-        yield return null;
 
-        PM.MovePlayer();
-    }
 }

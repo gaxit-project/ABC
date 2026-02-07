@@ -781,6 +781,7 @@ MonoBehaviour:
   - {fileID: 154633287}
   - {fileID: 1416934878}
   PM: {fileID: 1559071140}
+  CC: {fileID: 560947520}
   sceneTime: 4
 --- !u!81 &139283919
 AudioListener:
@@ -14430,6 +14431,7 @@ MonoBehaviour:
   - {fileID: 238471640}
   - {fileID: 1559071139}
   currentScript: {fileID: 1559071140}
+  isStopChange: 0
 --- !u!114 &560947521
 MonoBehaviour:
   m_ObjectHideFlags: 0

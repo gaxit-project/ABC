@@ -16,6 +16,7 @@ public class CameraChange : MonoBehaviour
     public PlayerMovement currentScript;   // 現在動いているプレイヤーのスクリプト
     private int EggSelect = 0;
     private bool isFarView = false;
+    public bool isStopChange = false;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +72,8 @@ public class CameraChange : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        if (isStopChange) return;
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             EggSelect = (EggSelect + 1) % targetScripts.Length;
@@ -102,6 +105,8 @@ public class CameraChange : MonoBehaviour
     /// <param name="num"></param>
     private void EggChange(int num)
     {
+        if (isStopChange) return;
+
         for (int i = 0; i < cameras.Length; i++)
         {
             cameras[i].GetComponent<CinemachineVirtualCamera>().Priority = 5;
@@ -168,5 +173,15 @@ public class CameraChange : MonoBehaviour
             farVcam.Priority = far ? 15 : 5;
 
         isFarView = far;
+    }
+
+    public void StopChange()
+    {
+        isStopChange = true;
+    }
+
+    public void MoveChange()
+    {
+        isStopChange = false;
     }
 }
