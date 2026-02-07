@@ -844,7 +844,7 @@ GameObject:
   - component: {fileID: 61098022}
   m_Layer: 3
   m_Name: Terrain (4)
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1252,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 160374, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
+      objectReference: {fileID: 0}
     - target: {fileID: 497674, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1503,7 +1507,7 @@ GameObject:
   - component: {fileID: 98268828}
   m_Layer: 3
   m_Name: ladder
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8365,7 +8369,7 @@ GameObject:
   - component: {fileID: 174214249}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8778,7 +8782,7 @@ GameObject:
   - component: {fileID: 202734514}
   m_Layer: 0
   m_Name: stair (7)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9437,7 +9441,7 @@ GameObject:
   - component: {fileID: 266231424}
   m_Layer: 3
   m_Name: ladder (2)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9685,6 +9689,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1532556961297136, guid: 30efe2829927a3644b46e2e1b291dbed, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     - target: {fileID: 4645516805591864, guid: 30efe2829927a3644b46e2e1b291dbed, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -9825,11 +9833,6 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 198534, guid: 71a819752bcd42b48968c6333ed0ec92, type: 3}
   m_PrefabInstance: {fileID: 638592162}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &311047860 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-  m_PrefabInstance: {fileID: 1270579559}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &324089867 stripped
 Transform:
@@ -10662,7 +10665,7 @@ GameObject:
   - component: {fileID: 391406389}
   m_Layer: 3
   m_Name: ladder (6)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12487,7 +12490,7 @@ GameObject:
   - component: {fileID: 552729552}
   m_Layer: 3
   m_Name: stair (2)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14114,7 +14117,7 @@ GameObject:
   - component: {fileID: 632227062}
   m_Layer: 3
   m_Name: stair (4)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14319,6 +14322,10 @@ PrefabInstance:
     - target: {fileID: 1532556961297136, guid: 30efe2829927a3644b46e2e1b291dbed, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532556961297136, guid: 30efe2829927a3644b46e2e1b291dbed, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     - target: {fileID: 4645516805591864, guid: 30efe2829927a3644b46e2e1b291dbed, type: 3}
       propertyPath: m_RootOrder
@@ -14591,7 +14598,7 @@ GameObject:
   - component: {fileID: 658073270}
   m_Layer: 3
   m_Name: Seesaw_ board
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14730,7 +14737,7 @@ GameObject:
   - component: {fileID: 665578833}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15249,7 +15256,7 @@ GameObject:
   - component: {fileID: 703586261}
   m_Layer: 3
   m_Name: Stair
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15685,7 +15692,7 @@ GameObject:
   - component: {fileID: 751032539}
   m_Layer: 3
   m_Name: ladder (5)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16382,7 +16389,7 @@ GameObject:
   - component: {fileID: 805021617}
   m_Layer: 3
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -16804,7 +16811,7 @@ GameObject:
   - component: {fileID: 827077800}
   m_Layer: 3
   m_Name: elevator
-  m_TagString: Untagged
+  m_TagString: Concrete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17213,6 +17220,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 160374, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
+      objectReference: {fileID: 0}
     - target: {fileID: 497674, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -17354,7 +17365,7 @@ GameObject:
   - component: {fileID: 898582497}
   m_Layer: 3
   m_Name: Terrain (1)
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -17602,7 +17613,7 @@ GameObject:
   - component: {fileID: 910802763}
   m_Layer: 3
   m_Name: ladder (4)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18779,7 +18790,7 @@ GameObject:
   - component: {fileID: 983556499}
   m_Layer: 3
   m_Name: ladder (1)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19075,6 +19086,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 105108, guid: 44b0563466c9af3438516781fadaedce, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 426196, guid: 44b0563466c9af3438516781fadaedce, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -19238,7 +19253,7 @@ GameObject:
   - component: {fileID: 1000865732}
   m_Layer: 3
   m_Name: ladder (3)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19590,7 +19605,7 @@ GameObject:
   - component: {fileID: 1038703182}
   m_Layer: 3
   m_Name: Ladder
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20673,6 +20688,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 109434, guid: fad2552b272603b4fb6dc1874c6d9381, type: 3}
+      propertyPath: m_TagString
+      value: Metal
+      objectReference: {fileID: 0}
     - target: {fileID: 464276, guid: fad2552b272603b4fb6dc1874c6d9381, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -21491,71 +21510,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1267356283}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1270579559
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1540223554}
-    m_Modifications:
-    - target: {fileID: 5173636134427302633, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_Name
-      value: hose01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427302633, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.007595
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.049999826
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.6706588
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.88798314
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.0000000068526864
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.459876
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.00000001323198
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -54.758003
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173636134427526857, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 98e57cce4bb1c1e4db8c5502c2a752b3, type: 3}
 --- !u!1001 &1277891334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27065,6 +27019,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 160374, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
+      objectReference: {fileID: 0}
     - target: {fileID: 497674, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -27635,7 +27593,7 @@ GameObject:
   - component: {fileID: 1406425756}
   m_Layer: 3
   m_Name: stair
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28389,6 +28347,134 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1848885412}
   m_SourcePrefab: {fileID: 100100000, guid: 71a819752bcd42b48968c6333ed0ec92, type: 3}
+--- !u!1 &1475961158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475961160}
+  - component: {fileID: 1475961159}
+  m_Layer: 7
+  m_Name: SE
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1475961159
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475961158}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 248c4d86e23e5c74792d934f1b2743c4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 256
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1475961160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475961158}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1954318660}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1476233217 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 198534, guid: 71a819752bcd42b48968c6333ed0ec92, type: 3}
@@ -28851,7 +28937,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 311047860}
   - {fileID: 958594438}
   - {fileID: 191955991}
   - {fileID: 554500220}
@@ -34693,6 +34778,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 160374, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
+      objectReference: {fileID: 0}
     - target: {fileID: 497674, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -35582,7 +35671,7 @@ GameObject:
   - component: {fileID: 1693138515}
   m_Layer: 3
   m_Name: stair (3)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35693,6 +35782,10 @@ PrefabInstance:
     - target: {fileID: 1532556961297136, guid: 30efe2829927a3644b46e2e1b291dbed, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532556961297136, guid: 30efe2829927a3644b46e2e1b291dbed, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     - target: {fileID: 4645516805591864, guid: 30efe2829927a3644b46e2e1b291dbed, type: 3}
       propertyPath: m_RootOrder
@@ -36917,7 +37010,7 @@ GameObject:
   - component: {fileID: 1837895161}
   m_Layer: 3
   m_Name: ladder (7)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37019,6 +37112,10 @@ PrefabInstance:
     - target: {fileID: 131442, guid: 6c83eb62d28d24e4b9b97c96ed84c8eb, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 131442, guid: 6c83eb62d28d24e4b9b97c96ed84c8eb, type: 3}
+      propertyPath: m_TagString
+      value: Metal
       objectReference: {fileID: 0}
     - target: {fileID: 473716, guid: 6c83eb62d28d24e4b9b97c96ed84c8eb, type: 3}
       propertyPath: m_RootOrder
@@ -37766,7 +37863,7 @@ GameObject:
   - component: {fileID: 1898364695}
   m_Layer: 3
   m_Name: stair (6)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37877,6 +37974,10 @@ PrefabInstance:
     - target: {fileID: 160374, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 160374, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
+      propertyPath: m_TagString
+      value: Concrete
       objectReference: {fileID: 0}
     - target: {fileID: 497674, guid: e28a3e09836c1c4469b68e99cdeea37b, type: 3}
       propertyPath: m_RootOrder
@@ -38349,12 +38450,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdeac385eafefdb4294fb5f07c86366f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollSource: {fileID: 339789792}
-  landSource: {fileID: 339789792}
+  rollSource: {fileID: 1475961159}
+  landSource: {fileID: 1475961159}
   groundSettings:
   - groundTag: Grass
-    land: {fileID: 0}
+    land: {fileID: 8300000, guid: 248c4d86e23e5c74792d934f1b2743c4, type: 3}
     roll: {fileID: 8300000, guid: 248c4d86e23e5c74792d934f1b2743c4, type: 3}
+  - groundTag: Metal
+    land: {fileID: 0}
+    roll: {fileID: 8300000, guid: 68692f0e68d1c0e4f8abfd88ae9823e2, type: 3}
+  - groundTag: Wood
+    land: {fileID: 0}
+    roll: {fileID: 8300000, guid: f82bb77d03d541f4599e8ff65cfe8343, type: 3}
 --- !u!4 &1958558448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 483702, guid: b18cd96b42b8f2841a1929c604adec65, type: 3}
@@ -38529,7 +38636,7 @@ GameObject:
   - component: {fileID: 1978354906}
   m_Layer: 3
   m_Name: stair (1)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38791,7 +38898,7 @@ GameObject:
   - component: {fileID: 2006226193}
   m_Layer: 0
   m_Name: stair (8)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39268,7 +39375,7 @@ GameObject:
   - component: {fileID: 2028879653}
   m_Layer: 3
   m_Name: stair (5)
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40789,6 +40896,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3512449845958865080, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       insertIndex: -1
       addedObject: {fileID: 251839071}
+    - targetCorrespondingSourceObject: {fileID: 1608939349701074909, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1475961160}
     - targetCorrespondingSourceObject: {fileID: 490794612800806305, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1573422352}
@@ -45950,7 +46060,7 @@ GameObject:
   - component: {fileID: 2111049484}
   m_Layer: 3
   m_Name: Terrain (2)
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -46089,6 +46199,10 @@ PrefabInstance:
     - target: {fileID: 764527328528769263, guid: a57e86d551e88f74ba2545b6bcd6a8b5, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 764527328528769263, guid: a57e86d551e88f74ba2545b6bcd6a8b5, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     - target: {fileID: 3963780058285855675, guid: a57e86d551e88f74ba2545b6bcd6a8b5, type: 3}
       propertyPath: m_Layer
