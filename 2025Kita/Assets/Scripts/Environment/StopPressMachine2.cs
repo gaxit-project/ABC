@@ -22,11 +22,11 @@ public class StopPressMachine2 : MonoBehaviour
         {
             if (platform != null)
             {
-                platform.transform.position = new Vector3(
-                    platform.transform.position.x,
-                    platform.topY,
-                    platform.transform.position.z
-                );
+                rb.MovePosition(new Vector3(
+                rb.position.x,
+                platform.topY,
+                rb.position.z
+                ));
                 platform.enabled = false;
             }
             wasStop = true;

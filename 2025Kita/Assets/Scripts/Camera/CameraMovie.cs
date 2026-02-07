@@ -31,8 +31,6 @@ public class CameraMovie : MonoBehaviour
         }
         yield return new WaitForSecondsRealtime(2f);
 
-        PM.MovePlayer();
-
         for (int i = 0; i < playerCamera.Length; i++)
         {
             playerCamera[i].SetActive(true);

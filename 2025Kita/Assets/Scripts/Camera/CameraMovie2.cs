@@ -10,9 +10,18 @@ public class CameraMovie2 : MonoBehaviour
 
     public IEnumerator CameraScene()
     {
-        
-
         yield return null; // •ÛŒ¯‚Å1ƒtƒŒ[ƒ€‘Ò‹@
+
+        StartCoroutine(CameraScene1());
+
+        yield return new WaitForSeconds(0.01f);
+
+        StartCoroutine(CameraScene2());
+    }
+
+    private IEnumerator CameraScene1()
+    {
+        yield return null;
 
         for (int i = 0; i < playerCamera.Length; i++)
         {
@@ -24,7 +33,7 @@ public class CameraMovie2 : MonoBehaviour
         //yield return new WaitForSecondsRealtime(2f);
         yield return new WaitForSecondsRealtime(sceneTime);
 
-        PM.MovePlayer();
+
 
         for (int i = 0; i < playerCamera.Length; i++)
         {
@@ -32,5 +41,12 @@ public class CameraMovie2 : MonoBehaviour
         }
 
         this.gameObject.SetActive(false);
+    }
+
+    private IEnumerator CameraScene2()
+    {
+        yield return null;
+
+        PM.MovePlayer();
     }
 }

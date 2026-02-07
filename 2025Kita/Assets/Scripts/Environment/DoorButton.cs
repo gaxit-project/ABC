@@ -6,6 +6,9 @@ public class DoorButton : MonoBehaviour
     public float bottomY = -0.01f;   // ボタンの沈む最大座標
     public float speed = 0.1f;  // ボタンの移動速度
     public MoveDoor door;
+    [SerializeField] private CameraMovie2 CM;
+    [SerializeField] private GameObject Camera;
+    [SerializeField] private PlayerMovement PM;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
@@ -35,7 +38,8 @@ public class DoorButton : MonoBehaviour
             // ボタンが完全に沈んでいる（目標位置にある）場合のみドアを開ける
             if (transform.position.y <= bottomY)
             {
-                door.isOpen = true; 
+                door.isOpen = true;
+                
             }
         }
         else // 触れていなければ元の位置に戻る
@@ -63,9 +67,16 @@ public class DoorButton : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-       isPlayerTouching = true; 
-       GetComponent<Renderer>().material.color = Color.green;
-       scaffold.SetActive(true);
+        if(other.gameObject.CompareTag("Player"))
+        {
+            isPlayerTouching = true;
+            GetComponent<Renderer>().material.color = Color.green;
+            scaffold.SetActive(true);
+            Camera.gameObject.SetActive(true);
+            StartCoroutine(CM.CameraScene());
+            //PM.MovePlayer();
+        }
+       
     }
 
     /// <summary>
