@@ -17,10 +17,12 @@ public class CameraChange : MonoBehaviour
     private int EggSelect = 0;
     private bool isFarView = false;
     public bool isStopChange = false;
+    private int savedIndex = -1;
 
     // Start is called before the first frame update
     void Start()
     {
+
         int startIndex = Mathf.Clamp(EggSelect, 0, targetScripts.Length - 1);
 
         if (targetScripts.Length > startIndex)
@@ -79,14 +81,8 @@ public class CameraChange : MonoBehaviour
             EggSelect = (EggSelect + 1) % targetScripts.Length;
             EggChange(EggSelect);
         }
-        if (Input.GetButton("FarCamera"))
-        {
-            ChangeCameraView(true);
-        }
-        else
-        {
-            ChangeCameraView(false);
-        }
+        bool far = Input.GetButton("FarCamera");
+        ChangeCameraView(far);
     }
 
     private void SubscribeToPlayerCollision(PlayerMovement player)
@@ -160,6 +156,8 @@ public class CameraChange : MonoBehaviour
 
     private void ChangeCameraView(bool far)
     {
+        if (isStopChange) return;
+
         int index = Array.IndexOf(targetScripts, currentScript);
         if (index < 0) return;
 
@@ -184,4 +182,5 @@ public class CameraChange : MonoBehaviour
     {
         isStopChange = false;
     }
+
 }

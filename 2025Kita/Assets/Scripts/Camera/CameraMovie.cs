@@ -1,41 +1,54 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovie : MonoBehaviour
 {
-    [SerializeField] GameObject[] playerCamera;
+    [SerializeField] CinemachineVirtualCamera[] movieCameras; // 演出用カメラ
     [SerializeField] PlayerMovement PM;
+    [SerializeField] CameraChange CC;
     [SerializeField] StopPressMachine2 SPM;
+    [SerializeField] private float sceneTime;
+
+    private int[] defaultPriorities;
+
+    private void Awake()
+    {
+        // 元の Priority を保存
+        defaultPriorities = new int[movieCameras.Length];
+        for (int i = 0; i < movieCameras.Length; i++)
+        {
+            defaultPriorities[i] = movieCameras[i].Priority;
+        }
+    }
 
     public IEnumerator CameraScene()
     {
-        
+        SPM.isStop = true;
 
         yield return null; // 保険で1フレーム待機
 
-        for (int i = 0; i < playerCamera.Length; i++)
+        // 演出用カメラを最優先に
+        for (int i = 0; i < movieCameras.Length; i++)
         {
-            playerCamera[i].SetActive(false);
+            movieCameras[i].Priority = 30;
         }
 
         PM.StopPlayer();
+        CC.StopChange();
+        
+        yield return new WaitForSecondsRealtime(sceneTime);
 
-        //yield return new WaitForSecondsRealtime(2f);
-        while (!SPM.RtnwasStop())
+        // Priorityを元に戻す
+        for (int i = 0; i < movieCameras.Length; i++)
         {
-            if (!SPM.RtnisStop())
-            {
-                break;
-            }
-        }
-        yield return new WaitForSecondsRealtime(2f);
-
-        for (int i = 0; i < playerCamera.Length; i++)
-        {
-            playerCamera[i].SetActive(true);
+            movieCameras[i].Priority = defaultPriorities[i];
         }
 
-        this.gameObject.SetActive(false);
+        PM.MovePlayer();
+        CC.MoveChange();
+
+        //this.gameObject.SetActive(false);
     }
 }

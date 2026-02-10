@@ -20,6 +20,10 @@ public class MovingPlatform : MonoBehaviour
     private bool goingDown = true;
     private bool pressing = false;
 
+    public bool stopRequest = false;   // äOïîÇ©ÇÁí‚é~óvãÅ
+    private bool isStopped = false;    // é¿ç€Ç…í‚é~ÇµÇΩÇ©
+
+
     private Rigidbody rb;
 
     void Start()
@@ -59,6 +63,15 @@ public class MovingPlatform : MonoBehaviour
         }
         else if (!goingDown && rb.position.y >= topY)
         {
+            //í∏ì_Ç…óàÇΩèuä‘
+            if (stopRequest)
+            {
+                currentSpeed = 0f;
+                rb.MovePosition(new Vector3(rb.position.x, topY, rb.position.z));
+                enabled = false;   // MovingPlatform é©êgÇí‚é~
+                isStopped = true;
+                return;
+            }
             goingDown = true;
             pressing = true;
             currentSpeed = 0;

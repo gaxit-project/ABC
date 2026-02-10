@@ -38,12 +38,12 @@ public class PressMachineButton2 : MonoBehaviour
             // ボタンが完全に沈んでいる（目標位置にある）場合のみドアを開ける
             if (transform.position.y <= bottomY)
             {
-                sPM.isStop = true; // プレス機を止める
+                //sPM.isStop = true; // プレス機を止める
                 if(!wasPush)
                 {
                     Camera.gameObject.SetActive(true);
                     StartCoroutine(CM.CameraScene());
-                    PM.MovePlayer();
+                    //PM.MovePlayer();
                 }
                 wasPush = true;
             }

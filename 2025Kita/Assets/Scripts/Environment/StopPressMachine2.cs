@@ -22,12 +22,7 @@ public class StopPressMachine2 : MonoBehaviour
         {
             if (platform != null)
             {
-                rb.MovePosition(new Vector3(
-                rb.position.x,
-                platform.topY,
-                rb.position.z
-                ));
-                platform.enabled = false;
+                platform.stopRequest = true; // 予約する
             }
             wasStop = true;
         }
@@ -35,6 +30,7 @@ public class StopPressMachine2 : MonoBehaviour
         {
             if (platform != null)
             {
+                platform.stopRequest = false;
                 platform.enabled = true; 
             }
             wasStop = false;
