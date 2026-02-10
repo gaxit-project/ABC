@@ -114,6 +114,7 @@ public class Scene : MonoBehaviour
     //Clearシーン移動
     private void ChangeClear()
     {
+        ReadyManager.ResetReady();
         ChangeScene("Clear");
     }
     public void ChangeClearInvoke()

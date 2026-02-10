@@ -5354,6 +5354,7 @@ MonoBehaviour:
   clearCondition: 3
   clearSE: {fileID: 1341187272}
   bakeSE: {fileID: 1668103819}
+  stageNumber: 5
 --- !u!1 &626254921 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4896158951902898197, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}

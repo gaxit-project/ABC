@@ -12,6 +12,7 @@ public class ClearConditions : MonoBehaviour
     CameraChange cameraChange;
     public AudioSource clearSE;
     public AudioSource bakeSE;
+    [SerializeField] int stageNumber = 1;
     private bool isCleared;
 
     private void Start()
@@ -40,6 +41,7 @@ public class ClearConditions : MonoBehaviour
 
     void SceneChange()
     {
+        StageManager.Instance.lastClearedStageNumber = stageNumber;
         SceneManager.LoadScene("Clear");
     }
 }

@@ -8,6 +8,8 @@ public class LaserButton : MonoBehaviour
     public float speed = 0.1f;  // ボタンの移動速度
     [SerializeField] private GameObject laser;
     [SerializeField] private FloorMove2[] floorMove;
+    [SerializeField] private CameraMovie2 CM;
+    [SerializeField] private float sceneTime = 2f;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
@@ -34,11 +36,10 @@ public class LaserButton : MonoBehaviour
             // ボタンが完全に沈んでいる（目標位置にある）場合のみドアを開ける
             if (transform.position.y <= bottomY)
             {
-                DeleteLaser();
-                for(int i = 0; i < floorMove.Length; i++)
-                {
-                    floorMove[i].enabled = true;
-                }
+                
+                StartCoroutine(DeleteLaser());
+                
+
             }
         }
         /*else // 触れていなければ元の位置に戻る
@@ -66,6 +67,7 @@ public class LaserButton : MonoBehaviour
         {
             isPlayerTouching = true;
             GetComponent<Renderer>().material.color = Color.green;
+            StartCoroutine(CM.CameraScene());
         }
     }
 
@@ -75,8 +77,15 @@ public class LaserButton : MonoBehaviour
         GetComponent<Renderer>().material.color = Color.white;
     }*/
 
-    public void DeleteLaser()
+    public IEnumerator DeleteLaser()
     {
+        yield return new WaitForSeconds(sceneTime);
         laser.SetActive(false);
+        for (int i = 0; i < floorMove.Length; i++)
+        {
+            floorMove[i].enabled = true;
+        }
     }
+
+
 }
