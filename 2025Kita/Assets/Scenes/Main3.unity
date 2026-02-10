@@ -1024,11 +1024,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1197172922274714656, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.374428
+      value: 6.474428
       objectReference: {fileID: 0}
     - target: {fileID: 1197172922274714656, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.4769993
+      value: 5.8789234
       objectReference: {fileID: 0}
     - target: {fileID: 2171310226230212850, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       propertyPath: m_Name
@@ -1222,8 +1222,7 @@ PrefabInstance:
       propertyPath: rayPosition
       value: 
       objectReference: {fileID: 154733618}
-    m_RemovedComponents:
-    - {fileID: 4346310911075028620, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8505615866358144632, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
@@ -1253,7 +1252,7 @@ PrefabInstance:
       addedObject: {fileID: 207061439}
     - targetCorrespondingSourceObject: {fileID: 2156056960309562372, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1273696675}
+      addedObject: {fileID: 888482989}
   m_SourcePrefab: {fileID: 100100000, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
 --- !u!114 &207061436 stripped
 MonoBehaviour:
@@ -3008,6 +3007,49 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750062918}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &888482989
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273696674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
+  m_LookaheadTime: 0
+  m_LookaheadSmoothing: 0
+  m_LookaheadIgnoreY: 0
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
+  m_TargetMovementOnly: 1
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_CameraDistance: 1.5
+  m_DeadZoneWidth: 0
+  m_DeadZoneHeight: 0
+  m_DeadZoneDepth: 0
+  m_UnlimitedSoftZone: 0
+  m_SoftZoneWidth: 0.8
+  m_SoftZoneHeight: 0.8
+  m_BiasX: 0
+  m_BiasY: 0
+  m_CenterOnActivate: 1
+  m_GroupFramingMode: 2
+  m_AdjustmentMode: 0
+  m_GroupFramingSize: 0.8
+  m_MaxDollyIn: 5000
+  m_MaxDollyOut: 5000
+  m_MinimumDistance: 1
+  m_MaximumDistance: 5000
+  m_MinimumFOV: 3
+  m_MaximumFOV: 60
+  m_MinimumOrthoSize: 1
+  m_MaximumOrthoSize: 5000
 --- !u!1 &938380202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3527,28 +3569,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2156056960309562372, guid: a99c8b63d2b87194fb2a7c6e10aa3977, type: 3}
   m_PrefabInstance: {fileID: 207061435}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1273696675
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1273696674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.7, z: 1.5}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
-  m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
-  m_AngularDamping: 0
 --- !u!114 &1273696677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4327,7 +4347,7 @@ Transform:
   m_GameObject: {fileID: 1371998065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9659258, z: -0.2588191, w: 0}
-  m_LocalPosition: {x: 2.8015194, y: 0.65721387, z: 3.4615002}
+  m_LocalPosition: {x: 2.8015194, y: 0.70721406, z: 3.260538}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5562,6 +5582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clearCondition: 1
   clearSE: {fileID: 1285402255}
+  bakeSE: {fileID: 1493926194}
 --- !u!114 &1741834074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5582,6 +5603,7 @@ MonoBehaviour:
   targetScripts:
   - {fileID: 207061436}
   currentScript: {fileID: 207061436}
+  isStopChange: 0
 --- !u!4 &1778528506 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1090556964910196065, guid: 22220b673140be544822e9b4847276c9, type: 3}

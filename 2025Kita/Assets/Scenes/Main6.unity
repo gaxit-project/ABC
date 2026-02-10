@@ -14405,6 +14405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clearCondition: 3
   clearSE: {fileID: 1663613778}
+  bakeSE: {fileID: 1995541327}
 --- !u!114 &560947520
 MonoBehaviour:
   m_ObjectHideFlags: 0
