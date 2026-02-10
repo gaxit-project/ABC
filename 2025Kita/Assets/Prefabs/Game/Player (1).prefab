@@ -223,10 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2579102964391765708}
-  - component: {fileID: 8876673631254350459}
   - component: {fileID: 7224417252964228981}
-  - component: {fileID: 8166869513918938382}
-  - component: {fileID: 7414919275126765333}
   - component: {fileID: 4456151822182254145}
   - component: {fileID: 2627038444128341519}
   m_Layer: 0
@@ -252,57 +249,6 @@ Transform:
   - {fileID: 4115445898167718375}
   m_Father: {fileID: 8023899424693957505}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!20 &8876673631254350459
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795422928770578120}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
-  orthographic: 0
-  orthographic size: 10
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!81 &7224417252964228981
 AudioListener:
   m_ObjectHideFlags: 0
@@ -311,54 +257,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795422928770578120}
   m_Enabled: 1
---- !u!114 &8166869513918938382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795422928770578120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f73d12f83ad2c4bbff5044741a6dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerObj: {fileID: 4210209270662525030}
-  smoothSpeed: 3
---- !u!114 &7414919275126765333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795422928770578120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4456151822182254145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,9 +499,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 12
   jumpPower: 5
+  rate: 0.3
   ready: 1
+  isStopMovement: 0
+  isGoal: 0
+  maxspeed: 10
+  crackedEgg: {fileID: 0}
   pause: {fileID: 0}
-  flag: 0
   friedEgg: {fileID: 0}
 --- !u!114 &6738580418323823028
 MonoBehaviour:
@@ -620,6 +522,7 @@ MonoBehaviour:
   HP: 50
   rayPosition: {fileID: 8230497583624196788}
   rayRange: 1
+  fallenDistance: 0
   takeDamageDistance: 2
 --- !u!136 &7700409596601200964
 CapsuleCollider:
@@ -877,11 +780,14 @@ MonoBehaviour:
   - {fileID: 342108185495129004}
   - {fileID: 795422928770578120}
   - {fileID: 2815491803622612100}
+  farCameras: []
   mainCamera: {fileID: 4629592651683273121}
   targetScripts:
   - {fileID: 8495106246922348556}
   - {fileID: 6914495257670963357}
   - {fileID: 5526341952805218476}
+  currentScript: {fileID: 0}
+  isStopChange: 0
 --- !u!1 &2815491803622612100
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,10 +797,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1197172922274714656}
-  - component: {fileID: 4346310911075028620}
   - component: {fileID: 819506585119406650}
-  - component: {fileID: 347808935029090330}
-  - component: {fileID: 5113105569793898466}
   - component: {fileID: 8879921361216990059}
   - component: {fileID: 5590707759910669473}
   m_Layer: 0
@@ -920,57 +823,6 @@ Transform:
   - {fileID: 3337422227514928506}
   m_Father: {fileID: 8505615866358144632}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!20 &4346310911075028620
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815491803622612100}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.1
-  far clip plane: 5000
-  field of view: 40
-  orthographic: 0
-  orthographic size: 10
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
 --- !u!81 &819506585119406650
 AudioListener:
   m_ObjectHideFlags: 0
@@ -979,54 +831,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2815491803622612100}
   m_Enabled: 1
---- !u!114 &347808935029090330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815491803622612100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f73d12f83ad2c4bbff5044741a6dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerObj: {fileID: 1452818496408925912}
-  smoothSpeed: 3
---- !u!114 &5113105569793898466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815491803622612100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8879921361216990059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,6 +1226,7 @@ MonoBehaviour:
   egg: {fileID: 5724564940838757000}
   crackedEgg: {fileID: 2321111571011330804}
   Food_EggRenderer: {fileID: 5724564940841024584}
+  roadTime: 1
 --- !u!1 &6587370764431493650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,6 +1277,7 @@ MonoBehaviour:
   egg: {fileID: 8379253574797304168}
   crackedEgg: {fileID: 1475458231677605414}
   Food_EggRenderer: {fileID: 8019198769614061757}
+  roadTime: 1
 --- !u!1 &6859721015002978882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1372,7 @@ MonoBehaviour:
   egg: {fileID: 966116440349906508}
   crackedEgg: {fileID: 344310252513513395}
   Food_EggRenderer: {fileID: 7422293833289122444}
+  roadTime: 1
 --- !u!1001 &4046316431443117379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1730,9 +1537,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 11
   jumpPower: 4
+  rate: 0.3
   ready: 1
+  isStopMovement: 0
+  isGoal: 0
+  maxspeed: 10
+  crackedEgg: {fileID: 0}
   pause: {fileID: 0}
-  flag: 0
   friedEgg: {fileID: 0}
 --- !u!114 &9046958262344062675
 MonoBehaviour:
@@ -1749,6 +1560,7 @@ MonoBehaviour:
   HP: 40
   rayPosition: {fileID: 5724564940839124648}
   rayRange: 0.5
+  fallenDistance: 0
   takeDamageDistance: 1.5
 --- !u!4 &5724564940839124648 stripped
 Transform:
@@ -2098,9 +1910,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 8
   jumpPower: 4
+  rate: 0.3
   ready: 1
+  isStopMovement: 0
+  isGoal: 0
+  maxspeed: 10
+  crackedEgg: {fileID: 0}
   pause: {fileID: 0}
-  flag: 0
   friedEgg: {fileID: 0}
 --- !u!114 &4380979876918394940
 MonoBehaviour:
@@ -2117,6 +1933,7 @@ MonoBehaviour:
   HP: 100
   rayPosition: {fileID: 9152095197843651538}
   rayRange: 0.1
+  fallenDistance: 0
   takeDamageDistance: 1.5
 --- !u!4 &9152095197843651538 stripped
 Transform:

@@ -11,6 +11,7 @@ public class ClearConditions : MonoBehaviour
     public static int clearFlag = 0;
     CameraChange cameraChange;
     public AudioSource clearSE;
+    public AudioSource bakeSE;
     private bool isCleared;
 
     private void Start()
@@ -24,15 +25,21 @@ public class ClearConditions : MonoBehaviour
         if (clearFlag >= clearCondition && !isCleared)
         {
             isCleared = true;
-            clearSE.Play();
-            Invoke(nameof(SceneChange), 3.0f);
+            StartCoroutine(PlaySound());
         }
+    }
+
+    IEnumerator PlaySound()
+    {
+        yield return new WaitForSeconds(1.0f);
+        clearSE.Play();
+        yield return new WaitForSeconds(clearSE.clip.length);
+        bakeSE.Play();
+        SceneChange();
     }
 
     void SceneChange()
     {
         SceneManager.LoadScene("Clear");
     }
-
-
 }

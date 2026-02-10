@@ -173,8 +173,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 50
   jumpPower: 5
+  rate: 0.3
   ready: 1
   isStopMovement: 0
+  isGoal: 0
+  maxspeed: 10
+  crackedEgg: {fileID: 0}
   pause: {fileID: 0}
   friedEgg: {fileID: 0}
 --- !u!114 &956499272222287447
@@ -192,6 +196,7 @@ MonoBehaviour:
   HP: 50
   rayPosition: {fileID: 4727950350966653992}
   rayRange: 0.85
+  fallenDistance: 0
   takeDamageDistance: 2
 --- !u!136 &8601671167709571777
 CapsuleCollider:
@@ -225,7 +230,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6758309459070077243}
-  - component: {fileID: 3716618407069299991}
   m_Layer: 0
   m_Name: Camera_3
   m_TagString: MainCamera
@@ -249,20 +253,6 @@ Transform:
   - {fileID: 3236314834616095060}
   m_Father: {fileID: 1426517890400733964}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!114 &3716618407069299991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2478298360958132825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f73d12f83ad2c4bbff5044741a6dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerObj: {fileID: 5107876445960157704}
-  smoothSpeed: 3
 --- !u!1 &3521992129726008761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,8 +1677,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 4
   jumpPower: 2
+  rate: 0.3
   ready: 1
   isStopMovement: 0
+  isGoal: 0
+  maxspeed: 10
+  crackedEgg: {fileID: 0}
   pause: {fileID: 7403354396564482729}
   friedEgg: {fileID: 0}
 --- !u!114 &4502340539372746215
@@ -1706,6 +1700,7 @@ MonoBehaviour:
   HP: 35
   rayPosition: {fileID: 1608939349701074909}
   rayRange: 0.1
+  fallenDistance: 0
   takeDamageDistance: 0.12
 --- !u!114 &7403354396564482729
 MonoBehaviour:
@@ -1978,8 +1973,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveForce: 4
   jumpPower: 2
+  rate: 0.3
   ready: 1
   isStopMovement: 0
+  isGoal: 0
+  maxspeed: 10
+  crackedEgg: {fileID: 0}
   pause: {fileID: 0}
   friedEgg: {fileID: 0}
 --- !u!114 &5169615585402833236
@@ -1997,6 +1996,7 @@ MonoBehaviour:
   HP: 20
   rayPosition: {fileID: 5259859771366463611}
   rayRange: 0.1
+  fallenDistance: 0
   takeDamageDistance: 0.1
 --- !u!1001 &8257888752196076888
 PrefabInstance:
