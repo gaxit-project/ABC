@@ -66,7 +66,11 @@ public class GravityButton : MonoBehaviour
             GetComponent<Renderer>().material.color = Color.green;
             GC.PressButton();
             Camera.gameObject.SetActive(true);
-            StartCoroutine(CM.CameraScene());
+            PlayerMovement pm = other.GetComponent<PlayerMovement>();
+            if (pm != null)
+            {
+                StartCoroutine(CM.CameraScene(pm));
+            }
             //PM.MovePlayer();
         }
     }

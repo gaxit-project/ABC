@@ -41,7 +41,16 @@ public class ClearConditions : MonoBehaviour
 
     void SceneChange()
     {
+        Debug.Log("StageNumber = " + stageNumber);
         StageManager.Instance.lastClearedStageNumber = stageNumber;
-        SceneManager.LoadScene("Clear");
+        if (stageNumber >= 6)
+        {
+            SceneManager.LoadScene("AllClear");
+        }
+        else
+        {
+            SceneManager.LoadScene("Clear");
+        }
+            
     }
 }

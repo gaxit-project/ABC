@@ -5,7 +5,7 @@ using Cinemachine;
 public class CameraMovie2 : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera[] movieCameras; // 演出用カメラ
-    [SerializeField] PlayerMovement PM;
+    //[SerializeField] PlayerMovement PM;
     [SerializeField] CameraChange CC;
     [SerializeField] float sceneTime = 4f;
 
@@ -20,11 +20,11 @@ public class CameraMovie2 : MonoBehaviour
         }
     }
 
-    public IEnumerator CameraScene()
+    public IEnumerator CameraScene(PlayerMovement pm)
     {
         yield return null; // 保険
 
-        PM.StopPlayer();
+        pm.StopPlayer();
         CC.StopChange();
 
         // 演出用カメラを最優先に
@@ -41,7 +41,7 @@ public class CameraMovie2 : MonoBehaviour
             movieCameras[i].Priority = defaultPriorities[i];
         }
 
-        PM.MovePlayer();
+        pm.MovePlayer();
         CC.MoveChange();
 
         //gameObject.SetActive(false);

@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraMovie : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera[] movieCameras; // ââèoópÉJÉÅÉâ
-    [SerializeField] PlayerMovement PM;
+    //[SerializeField] PlayerMovement PM;
     [SerializeField] CameraChange CC;
     [SerializeField] StopPressMachine2 SPM;
     [SerializeField] private float sceneTime;
@@ -23,7 +23,7 @@ public class CameraMovie : MonoBehaviour
         }
     }
 
-    public IEnumerator CameraScene()
+    public IEnumerator CameraScene(PlayerMovement pm)
     {
         SPM.isStop = true;
 
@@ -35,7 +35,7 @@ public class CameraMovie : MonoBehaviour
             movieCameras[i].Priority = 30;
         }
 
-        PM.StopPlayer();
+        pm.StopPlayer();
         CC.StopChange();
         
         yield return new WaitForSecondsRealtime(sceneTime);
@@ -46,7 +46,7 @@ public class CameraMovie : MonoBehaviour
             movieCameras[i].Priority = defaultPriorities[i];
         }
 
-        PM.MovePlayer();
+        pm.MovePlayer();
         CC.MoveChange();
 
         //this.gameObject.SetActive(false);

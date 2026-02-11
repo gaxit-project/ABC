@@ -67,7 +67,7 @@ public class LaserButton : MonoBehaviour
         {
             isPlayerTouching = true;
             GetComponent<Renderer>().material.color = Color.green;
-            StartCoroutine(CM.CameraScene());
+            StartCoroutine(CM.CameraScene(other.GetComponent<PlayerMovement>()));
         }
     }
 

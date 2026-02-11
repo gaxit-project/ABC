@@ -6554,7 +6554,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movieCameras:
   - {fileID: 722003334}
-  PM: {fileID: 1929676215}
   CC: {fileID: 624097522}
   sceneTime: 4
 --- !u!1 &743736786
@@ -26297,6 +26296,51 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a56a9fe4fc76fb45a55f77f37c20be6, type: 3}
+--- !u!1 &1362199613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1362199615}
+  - component: {fileID: 1362199614}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1362199614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362199613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4bbf6c24a0b87d459442b352b330483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageIndex: 4
+--- !u!4 &1362199615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362199613}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.6170259, y: 7.350114, z: -3.9537468}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1365755209
 GameObject:
   m_ObjectHideFlags: 3
@@ -30266,7 +30310,6 @@ MonoBehaviour:
   sPM: {fileID: 977299045}
   CM: {fileID: 2106707868}
   Camera: {fileID: 2106707862}
-  PM: {fileID: 1929676215}
 --- !u!1 &2084681223
 GameObject:
   m_ObjectHideFlags: 0
@@ -31500,7 +31543,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movieCameras:
   - {fileID: 2106707867}
-  PM: {fileID: 1929676215}
   CC: {fileID: 624097522}
   SPM: {fileID: 977299045}
   sceneTime: 4
@@ -31819,4 +31861,5 @@ SceneRoots:
   - {fileID: 2106707866}
   - {fileID: 722003332}
   - {fileID: 989247230}
+  - {fileID: 1362199615}
   - {fileID: 1191020575}

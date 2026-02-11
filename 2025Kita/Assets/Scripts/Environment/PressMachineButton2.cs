@@ -10,7 +10,7 @@ public class PressMachineButton2 : MonoBehaviour
     public StopPressMachine2 sPM;
     [SerializeField] CameraMovie CM;
     [SerializeField] GameObject Camera;
-    [SerializeField] PlayerMovement PM;
+    //[SerializeField] PlayerMovement PM;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
@@ -42,7 +42,6 @@ public class PressMachineButton2 : MonoBehaviour
                 if(!wasPush)
                 {
                     Camera.gameObject.SetActive(true);
-                    StartCoroutine(CM.CameraScene());
                     //PM.MovePlayer();
                 }
                 wasPush = true;
@@ -74,6 +73,7 @@ public class PressMachineButton2 : MonoBehaviour
         {
             isPlayerTouching = true;
             GetComponent<Renderer>().material.color = Color.green;
+            StartCoroutine(CM.CameraScene(other.GetComponent<PlayerMovement>()));
         }
     }
 

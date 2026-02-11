@@ -73,7 +73,7 @@ public class DoorButton : MonoBehaviour
             GetComponent<Renderer>().material.color = Color.green;
             scaffold.SetActive(true);
             Camera.gameObject.SetActive(true);
-            StartCoroutine(CM.CameraScene());
+            StartCoroutine(CM.CameraScene(other.GetComponent<PlayerMovement>()));
             //PM.MovePlayer();
         }
        
