@@ -15,10 +15,12 @@ public class PressMachineButton2 : MonoBehaviour
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
     private bool wasPush = false;
+    private Sound sound;
 
     void Start()
     {
         startY = transform.position.y;  // 初期位置を保存
+        sound = GetComponent<Sound>();
     }
 
     void Update()
@@ -74,6 +76,7 @@ public class PressMachineButton2 : MonoBehaviour
             isPlayerTouching = true;
             GetComponent<Renderer>().material.color = Color.green;
             StartCoroutine(CM.CameraScene(other.GetComponent<PlayerMovement>()));
+            sound.PlayButton();
         }
     }
 

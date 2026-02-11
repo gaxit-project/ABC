@@ -12,6 +12,7 @@ public class DoorButton : MonoBehaviour
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
+    private Sound sound;
 
     public GameObject scaffold; // 出現する足場
 
@@ -19,6 +20,7 @@ public class DoorButton : MonoBehaviour
     {
         startY = transform.position.y;  // 初期位置を保存
         scaffold.SetActive(false);
+        sound = GetComponent<Sound>();
     }
 
     void Update()
@@ -74,6 +76,7 @@ public class DoorButton : MonoBehaviour
             scaffold.SetActive(true);
             Camera.gameObject.SetActive(true);
             StartCoroutine(CM.CameraScene(other.GetComponent<PlayerMovement>()));
+            sound.PlayButton();
             //PM.MovePlayer();
         }
        

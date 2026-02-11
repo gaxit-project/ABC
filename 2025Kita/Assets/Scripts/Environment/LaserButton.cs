@@ -10,6 +10,7 @@ public class LaserButton : MonoBehaviour
     [SerializeField] private FloorMove2[] floorMove;
     [SerializeField] private CameraMovie2 CM;
     [SerializeField] private float sceneTime = 2f;
+    private Sound sound;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
@@ -17,6 +18,7 @@ public class LaserButton : MonoBehaviour
     void Start()
     {
         startY = transform.position.y;  // 初期位置を保存
+        sound = GetComponent<Sound>();
     }
 
     void Update()
@@ -68,6 +70,7 @@ public class LaserButton : MonoBehaviour
             isPlayerTouching = true;
             GetComponent<Renderer>().material.color = Color.green;
             StartCoroutine(CM.CameraScene(other.GetComponent<PlayerMovement>()));
+            sound.PlayButton();
         }
     }
 

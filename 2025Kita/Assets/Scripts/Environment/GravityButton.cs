@@ -13,10 +13,12 @@ public class GravityButton : MonoBehaviour
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
+    private Sound sound;
 
     void Start()
     {
         startY = transform.position.y;  // 初期位置を保存
+        sound = GetComponent<Sound>(); 
     }
 
     void Update()
@@ -71,6 +73,7 @@ public class GravityButton : MonoBehaviour
             {
                 StartCoroutine(CM.CameraScene(pm));
             }
+            sound.PlayButton();
             //PM.MovePlayer();
         }
     }
