@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public class Scene : MonoBehaviour
 {
+    [SerializeField] private Image fadePanel;             // フェード用のUIパネル（Image）
+    [SerializeField] private float fadeDuration = 1.0f;   // フェードの完了にかかる時間
     [SerializeField] private Canvas normalCanvas;
     [SerializeField] private GameObject quitCanvas;
     [SerializeField] private Button firstQuitButton;
@@ -17,10 +19,30 @@ public class Scene : MonoBehaviour
     [SerializeField] private float time = 0.2f;
     private bool quit = false;
 
+    public IEnumerator FadeOutAndLoadScene(string sceneName)
+    {
+        fadePanel.enabled = true;                 // パネルを有効化
+        float elapsedTime = 0.0f;                 // 経過時間を初期化
+        Color startColor = fadePanel.color;       // フェードパネルの開始色を取得
+        Color endColor = new Color(startColor.r, startColor.g, startColor.b, 1.0f); // フェードパネルの最終色を設定
+
+        // フェードアウトアニメーションを実行
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;                        // 経過時間を増やす
+            float t = Mathf.Clamp01(elapsedTime / fadeDuration);  // フェードの進行度を計算
+            fadePanel.color = Color.Lerp(startColor, endColor, t); // パネルの色を変更してフェードアウト
+            yield return null;                                     // 1フレーム待機
+        }
+
+        fadePanel.color = endColor;  // フェードが完了したら最終色に設定
+        SceneManager.LoadScene(sceneName);
+    }
+
     //シーン移動処理
     private void ChangeScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(FadeOutAndLoadScene(sceneName));
     }
     //Mainシーン移動
     private void ChangeMain()
