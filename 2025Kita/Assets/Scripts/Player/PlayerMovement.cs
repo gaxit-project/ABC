@@ -36,10 +36,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         status = GetComponent<PlayerStatus>();
-        if(friedEgg != null)
+        /*if(friedEgg != null)
         {
             audioSource = friedEgg.GetComponent<AudioSource>();
-        }
+        }*/
         GetComponent<ClearConditions>();
     }
 
@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
             crackedEgg.SetActive(true);
             crackedEgg.transform.position = this.gameObject.transform.position;
             friedEgg.SetActive(true);
-            audioSource.Play();
+            //audioSource.Play();
             ClearConditions.clearFlag++;
         }
         if (other.gameObject.tag == "Death")
