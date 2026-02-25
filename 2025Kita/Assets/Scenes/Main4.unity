@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4504627, g: 0.5004645, b: 0.57517666, a: 1}
+  m_IndirectSpecularColor: {r: 0.45046282, g: 0.50046486, b: 0.57517725, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12950,7 +12950,7 @@ Transform:
   m_GameObject: {fileID: 156683952}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9914449, z: -0.13052616, w: 0}
-  m_LocalPosition: {x: 0.010427058, y: 3.7495077, z: 13.420392}
+  m_LocalPosition: {x: 0.010427117, y: 3.7495081, z: 13.420393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14358,7 +14358,7 @@ Transform:
   m_GameObject: {fileID: 251839070}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7826082, z: -0.6225146, w: 0}
-  m_LocalPosition: {x: 0.0104269385, y: 16.821466, z: 5.5603113}
+  m_LocalPosition: {x: 0.010426998, y: 16.821468, z: 5.560312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69563,7 +69563,7 @@ Transform:
   m_GameObject: {fileID: 1573422351}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6225146, y: -0, z: -0, w: 0.7826082}
-  m_LocalPosition: {x: -1.2210002, y: 33.27693, z: -11.652015}
+  m_LocalPosition: {x: -1.2209997, y: 33.276936, z: -11.652017}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -70196,7 +70196,7 @@ Transform:
   m_GameObject: {fileID: 1625039250}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6225146, y: -0, z: -0, w: 0.7826082}
-  m_LocalPosition: {x: 0.17492247, y: 33.642185, z: 35.449886}
+  m_LocalPosition: {x: 0.17492151, y: 33.64219, z: 35.449886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -77317,11 +77317,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'MOVE  :L Stick         JUMP  :A Button         CHANGE  :D-pad        
-    HIGH-ANGLE  :L Bumper
-
-
-'
+  m_Text: "\u79FB\u52D5  :L \u30B9\u30C6\u30A3\u30C3\u30AF         \u30B8\u30E3\u30F3\u30D7 
+    :A \u30DC\u30BF\u30F3         \u5375\u5207\u308A\u66FF\u3048  :\u5341\u5B57\u30AD\u30FC        
+    \u8996\u70B9\u5909\u66F4  :L \u30DC\u30BF\u30F3\n\n"
 --- !u!222 &1818476197
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -85901,15 +85899,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2210002
+      value: -1.2209997
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.610267
+      value: 6.610268
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.20757
+      value: -17.207571
       objectReference: {fileID: 0}
     - target: {fileID: 5812969596837874526, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalRotation.w
@@ -86001,7 +85999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6758309459070077243, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17492247
+      value: 0.17492151
       objectReference: {fileID: 0}
     - target: {fileID: 6758309459070077243, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.y
