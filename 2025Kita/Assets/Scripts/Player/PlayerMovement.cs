@@ -10,17 +10,17 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
 
+    float moveHorizontal;           // 水平方向
+    float moveVertical;             // 垂直方向
+
     public float moveForce = 5f;    // 移動するための力の強さ
     public float jumpPower = 200f;  // ジャンプ力
     public float rate = 0.3f;
 
-    float moveHorizontal;           // 水平方向
-    float moveVertical;             // 垂直方向
     private bool isJumping = false; // ジャンプ中かどうか
     public bool ready = true;       //ゲーム開始前かどうか
     public bool isStopMovement = false;   // 動きを止めるかどうかのフラグ
     public bool isGoal = false;
-    CameraChange cameraChange;
     public float maxspeed = 10f;
 
     [SerializeField] public GameObject crackedEgg;  // 割れた後のオブジェクト
@@ -31,16 +31,13 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource audioSource;
     public event Action<GameObject> OnEggCollided;
 
+   
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         status = GetComponent<PlayerStatus>();
-        /*if(friedEgg != null)
-        {
-            audioSource = friedEgg.GetComponent<AudioSource>();
-        }*/
-        GetComponent<ClearConditions>();
     }
 
     // Update is called once per frame
@@ -76,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(status.HP <= 0 || isStopMovement)
+        if (status.HP <= 0 || isStopMovement)
         {
             return;
         }
@@ -120,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
             //audioSource.Play();
             ClearConditions.clearFlag++;
         }
-        if (other.gameObject.tag == "Death")
+        if (other.gameObject.CompareTag("Death"))
         {
             status.HP = 0;
         }
@@ -142,10 +139,12 @@ public class PlayerMovement : MonoBehaviour
         
         if(isStopped)
         {
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            rb.isKinematic = true;
+            //rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         }
         else
         {
+            rb.isKinematic = false;
             rb.constraints = RigidbodyConstraints.None;
         }
     }
