@@ -44,23 +44,6 @@ public class LaserButton : MonoBehaviour
 
             }
         }
-        /*else // êGÇÍÇƒÇ¢Ç»ÇØÇÍÇŒå≥ÇÃà íuÇ…ñﬂÇÈ
-        {
-            if (transform.position.y < startY)
-            {
-                transform.position += Vector3.up * speed * Time.deltaTime;
-
-                if (transform.position.y >= startY)
-                {
-                    transform.position = new Vector3(transform.position.x, startY, transform.position.z);
-                }
-            }
-
-            if (transform.position.y >= startY)
-            {
-                //GC.ReleaseButton();
-            }
-        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,11 +57,7 @@ public class LaserButton : MonoBehaviour
         }
     }
 
-    /*private void OnTriggerExit(Collider other)
-    {
-        isPlayerTouching = false;
-        GetComponent<Renderer>().material.color = Color.white;
-    }*/
+
 
     public IEnumerator DeleteLaser()
     {

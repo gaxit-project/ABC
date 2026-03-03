@@ -38,7 +38,7 @@ public class GravityButton : MonoBehaviour
             // ボタンが完全に沈んでいる（目標位置にある）場合のみドアを開ける
             if (transform.position.y <= bottomY)
             {
-                //GC.PressButton();
+
             }
         }
         else // 触れていなければ元の位置に戻る
@@ -55,7 +55,7 @@ public class GravityButton : MonoBehaviour
 
             if (transform.position.y >= startY)
             {
-                //GC.ReleaseButton();
+
             }
         }
     }
@@ -74,7 +74,6 @@ public class GravityButton : MonoBehaviour
                 StartCoroutine(CM.CameraScene(pm));
             }
             sound.PlayButton();
-            //PM.MovePlayer();
         }
     }
 

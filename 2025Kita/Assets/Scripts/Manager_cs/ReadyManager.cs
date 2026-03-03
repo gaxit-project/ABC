@@ -10,12 +10,13 @@ public class ReadyManager : MonoBehaviour
     [SerializeField] private Pause pause;
     [SerializeField] private StageCamera sc;
 
-    private static bool reload = false;
-    public bool isReady = true;
+    private static bool reload = false;     //任意のステージを1度遊んだかどうかのフラグ
+    public bool isReady = true;     //ステージ前に一時停止するかどうかのフラグ
 
+    //ステージ開始前に強制的に実行
     private IEnumerator Start()
     {
-        if (reload)
+        if (reload)     //同じステージをもう一度始める場合
         {
             text.text = "";
             isReady = false;
@@ -26,7 +27,7 @@ public class ReadyManager : MonoBehaviour
                 player.ready = true;
             }
         }
-        else if(!reload)
+        else if(!reload)    //セレクト画面から移動した場合
         {
             if (sc != null)
             {
@@ -40,7 +41,7 @@ public class ReadyManager : MonoBehaviour
         }
     }
 
-    //�X�^�[�g�O�̃J�E���g�_�E��
+    //ステージ開始前の待ち
     private IEnumerator ReadyStart()
     {
         int count = 3;
@@ -52,7 +53,7 @@ public class ReadyManager : MonoBehaviour
             player.ready = false;
         }
 
-        //�Q�[���J�n�܂őҋ@���Ă���Ԃ̏���
+        //カウントダウン開始
         while(count > 0)
         {
             text.text = "Ready...";
@@ -62,7 +63,7 @@ public class ReadyManager : MonoBehaviour
 
         yield return new WaitUntil(() => !pause.isPaused);
 
-        //�Q�[���J�n�����Ƃ��̏���
+        //カウントダウン終了
         text.text = "Start!";
         yield return new WaitForSecondsRealtime(1f);
         text.gameObject.SetActive(false);
@@ -76,12 +77,11 @@ public class ReadyManager : MonoBehaviour
             player.ready = true;
         }
 
-            //�V�[����1�x�ǂݍ���ł���
-            reload = true;
+        reload = true;      //1度任意のステージを遊んだ
 
     }
 
-    //�X�^�[�g�O�̖ړI�\��
+    //ステージ開始前の目的表示
     private IEnumerator ShowPurpose()
     {
         int count = 3;
@@ -96,13 +96,13 @@ public class ReadyManager : MonoBehaviour
         
     }
 
-    //�����x�V�[����ǂݍ��ނ�
+    //外部からのリセットメソッド
     public static void ResetReady()
     {
         reload = false;
     }
 
-    //�X�L�b�v�{�^���������ꂽ��
+    //ステージ演出のスキップの許可
     public void SkipCamera()
     {
         sc.skip = true;

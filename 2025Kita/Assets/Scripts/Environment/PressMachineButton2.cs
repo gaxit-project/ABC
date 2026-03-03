@@ -10,7 +10,6 @@ public class PressMachineButton2 : MonoBehaviour
     public StopPressMachine2 sPM;
     [SerializeField] CameraMovie CM;
     [SerializeField] GameObject Camera;
-    //[SerializeField] PlayerMovement PM;
 
     private float startY;   // ボタンの初期Y座標
     private bool isPlayerTouching = false;  // プレイヤーが触れているか (押されている状態か)
@@ -40,11 +39,9 @@ public class PressMachineButton2 : MonoBehaviour
             // ボタンが完全に沈んでいる（目標位置にある）場合のみドアを開ける
             if (transform.position.y <= bottomY)
             {
-                //sPM.isStop = true; // プレス機を止める
                 if(!wasPush)
                 {
                     Camera.gameObject.SetActive(true);
-                    //PM.MovePlayer();
                 }
                 wasPush = true;
             }

@@ -8,9 +8,7 @@ public class StageManager : MonoBehaviour
 {
     public static StageManager Instance;
 
-    //public int clearedStage = 0;
-
-    [SerializeField] private Image fadePanel;             // フェード用のUIパネル（Image）
+    [SerializeField] private Image fadePanel;             // フェード用のUIパネル
     [SerializeField] private float fadeDuration = 1.0f;   // フェードの完了にかかる時間
     [SerializeField] private AudioSource startSE;
     [SerializeField] int lastStageNumber = 6; // 最終ステージ番号
@@ -25,7 +23,6 @@ public class StageManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            //clearedStage = PlayerPrefs.GetInt("ClearedStage", 0);
         }
         else
         {
@@ -44,7 +41,7 @@ public class StageManager : MonoBehaviour
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene,UnityEngine.SceneManagement.LoadSceneMode mode)
     {
-        // 🔥 Inspector未設定なら探す
+        //Inspector未設定なら探す
         if (fadePanel == null)
         {
             GameObject obj = GameObject.Find("Panel");
@@ -67,7 +64,7 @@ public class StageManager : MonoBehaviour
         Debug.Log("Cleared Stage: " + lastClearedStageNumber);
     }
 
-    // 🔥 今いるステージ番号を渡す
+    //今いるステージ番号を渡す
     public void LoadNextStage()
     {
         currentStageNumber = lastClearedStageNumber;

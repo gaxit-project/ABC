@@ -7,7 +7,7 @@ public class Pause : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private ReadyManager rm;
 
-    public bool isPaused = false;
+    public bool isPaused = false;       //ポーズ画面を開いているかどうかのフラグ
 
     //ポーズ画面を開くかどうか判断
     public void PauseGame()

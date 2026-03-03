@@ -29,6 +29,7 @@ public class FarCamera : MonoBehaviour
         }
     }
 
+    //˜ëáÕƒJƒƒ‰‚Ö‚ÌØ‚è‘Ö‚¦ˆ—
     private void SetFarView(bool far)
     {
         if (normalCamera != null)

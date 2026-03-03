@@ -11,17 +11,6 @@ public class GameManager : MonoBehaviour
 
     private PlayerInput playerInput;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();

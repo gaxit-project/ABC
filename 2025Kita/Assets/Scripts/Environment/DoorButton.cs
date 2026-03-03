@@ -77,7 +77,6 @@ public class DoorButton : MonoBehaviour
             Camera.gameObject.SetActive(true);
             StartCoroutine(CM.CameraScene(other.GetComponent<PlayerMovement>()));
             sound.PlayButton();
-            //PM.MovePlayer();
         }
        
     }
