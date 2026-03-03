@@ -11403,6 +11403,10 @@ PrefabInstance:
       propertyPath: startpoint
       value: 
       objectReference: {fileID: 2024403106}
+    - target: {fileID: 441129617517667506, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f067248941196b648821e24274fb6ee4, type: 2}
     - target: {fileID: 490794612800806305, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -11535,6 +11539,10 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2448764424586760312, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7109708741784996638, guid: e2de88dbb5543c144b4f4050c7f0e963, type: 3}
     - target: {fileID: 2478298360958132825, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -12135,6 +12143,10 @@ PrefabInstance:
       propertyPath: deceleration
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7354780092527616569, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7109708741784996638, guid: e2de88dbb5543c144b4f4050c7f0e963, type: 3}
     - target: {fileID: 7403354396564482729, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: rm
       value: 
