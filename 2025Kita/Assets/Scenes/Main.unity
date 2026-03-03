@@ -189534,6 +189534,10 @@ PrefabInstance:
       propertyPath: deceleration
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7354780092527616569, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7109708741784996638, guid: e2de88dbb5543c144b4f4050c7f0e963, type: 3}
     - target: {fileID: 7403354396564482729, guid: 1876b55d0c1196d4695afa068366cf16, type: 3}
       propertyPath: isPaused
       value: 0
