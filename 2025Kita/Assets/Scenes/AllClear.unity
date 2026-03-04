@@ -654,7 +654,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5340130194121172353, guid: d4deca3e93e736a449e5e55c66fecfda, type: 3}
+      - m_Target: {fileID: 2044586650}
         m_TargetAssemblyTypeName: Scene, Assembly-CSharp
         m_MethodName: ChangeTitleInvoke
         m_Mode: 1
