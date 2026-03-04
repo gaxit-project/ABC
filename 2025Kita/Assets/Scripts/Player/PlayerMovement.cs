@@ -139,12 +139,12 @@ public class PlayerMovement : MonoBehaviour
         
         if(isStopped)
         {
-            rb.isKinematic = true;
-            //rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            //rb.isKinematic = true;
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         }
         else
         {
-            rb.isKinematic = false;
+            //rb.isKinematic = false;
             rb.constraints = RigidbodyConstraints.None;
         }
     }
